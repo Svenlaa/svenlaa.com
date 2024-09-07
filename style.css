@@ -59,14 +59,19 @@ ul > li {
     list-style: '- ';
 }
 
-a {
-    --color: var(--stone-950);
-    color: var(--color);
-}
-
 *::selection {
     background-color: var(--indigo);
     color: var(--stone-050);
+}
+
+a.big {
+    padding: 0.1em;
+    font-weight: bold;
+}
+
+a {
+    --color: var(--stone-950);
+    color: var(--color);
 }
 
 a:hover {
