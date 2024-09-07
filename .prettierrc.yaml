@@ -1,0 +1,5 @@
+tabWidth: 4
+trailingComma: 'es5'
+htmlWhitespaceSensitivity: css
+singleQuote: true
+printWidth: 1000

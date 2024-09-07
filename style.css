@@ -1,0 +1,45 @@
+:root {
+    /* https://tailwindcss.com/docs/customizing-colors */
+
+    --stone-050: #fafaf9;
+    --stone-100: #f5f5f4;
+    --stone-200: #e7e5e4;
+    --stone-300: #d6d3d1;
+    --stone-400: #a8a29e;
+    --stone-500: #78716c;
+    --stone-600: #57534e;
+    --stone-700: #44403c;
+    --stone-800: #292524;
+    --stone-900: #1c1917;
+    --stone-950: #0c0a09;
+
+    --red: #ef4444;
+    --orange: #f97316;
+    --amber: #f59e0b;
+    --yellow: #eab308;
+    --lime: #84cc16;
+    --green: #22c55e;
+    --emerald: #10b981;
+    --teal: #14b8a6;
+    --cyan: #06b6d4;
+    --sky: #0ea5e9;
+    --blue: #3b82f6;
+    --indigo: #6366f1;
+    --violet: #8b5cf6;
+    --purple: #a855f7;
+    --fuchsia: #d946ef;
+    --pink: #ec4899;
+    --rose: #f43f5e;
+
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 30px 10px;
+    font-size: 1.1em;
+    background-color: var(--stone-050);
+    color: var(--stone-950);
+}
