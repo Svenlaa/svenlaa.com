@@ -64,6 +64,11 @@ a {
     color: var(--color);
 }
 
+*::selection {
+    background-color: var(--indigo);
+    color: var(--stone-050);
+}
+
 a:hover {
     background-color: var(--color);
     color: var(--stone-050);
