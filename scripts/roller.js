@@ -1,5 +1,4 @@
 const rollers = document.querySelectorAll('[data-roller]');
-console.log(rollers);
 
 rollers.forEach((roller) => {
     const optionsString = roller.dataset.roller ?? '';
