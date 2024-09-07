@@ -31,7 +31,7 @@
     --pink: #ec4899;
     --rose: #f43f5e;
 
-    --font-mono: 'JetBrains Mono', monospace;
+    --font-mono: 'JetBrains Mono', 'SF Mono', 'Roboto Mono', 'Cascadia Code', monospace;
 }
 
 body {
