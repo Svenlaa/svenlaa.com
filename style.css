@@ -44,8 +44,12 @@ body {
     color: var(--stone-950);
 }
 
+h1 {
+    font-family: var(--font-mono);
+}
+
 a {
-    --color: inherit;
+    --color: var(--stone-950);
     color: var(--color);
 }
 
