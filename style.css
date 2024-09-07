@@ -45,8 +45,18 @@ body {
     color: var(--stone-950);
 }
 
-h1 {
+h1,
+h2,
+h3 {
     font-family: var(--font-mono);
+}
+
+ul {
+    padding-inline-start: 1em;
+}
+
+ul > li {
+    list-style: '- ';
 }
 
 a {
@@ -57,4 +67,5 @@ a {
 a:hover {
     background-color: var(--color);
     color: var(--stone-050);
+    outline: 2px solid var(--color);
 }
