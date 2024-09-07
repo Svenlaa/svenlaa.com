@@ -43,3 +43,13 @@ body {
     background-color: var(--stone-050);
     color: var(--stone-950);
 }
+
+a {
+    --color: inherit;
+    color: var(--color);
+}
+
+a:hover {
+    background-color: var(--color);
+    color: var(--stone-050);
+}
