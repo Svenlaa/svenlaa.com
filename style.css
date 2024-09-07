@@ -70,7 +70,7 @@ a.big {
 }
 
 a {
-    --color: var(--stone-950);
+    --color: var(--fuchsia);
     color: var(--color);
 }
 
