@@ -67,6 +67,11 @@ ul > li {
 a.big {
     padding: 0.1em;
     font-weight: bold;
+    margin: 0 0.2em;
+}
+
+a.big:first-of-type {
+    margin-left: 0;
 }
 
 a {
