@@ -1,0 +1,35 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Playground - Svenlaa</title>
+<meta property="og:image" content="https://svenlaa.com/og.jpg" />
+<link rel="stylesheet" href="/style.css" />
+
+<h1>Date to RFC-822</h1>
+<p>A small tool to convert anystring that javascript can understand as a string to RFC-822, the format for RSS.</p>
+
+<label style="margin-bottom: 1em">
+    Date String
+    <input type="text" name="date" />
+</label>
+
+<span id="output" style="margin-right: 0.2em">Please enter a valid date</span
+><button type="button" onclick="copyText()" id="copy">Copy</button>
+
+<script>
+    const outputElement = document.querySelector('#output');
+    const inputElement = document.querySelector('input[name=date]');
+
+    function copyText() {
+        const text = outputElement.textContent;
+        navigator.clipboard.writeText(text);
+    }
+
+    inputElement.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') return copyText();
+    });
+
+    inputElement.addEventListener('input', (e) => {
+        const date = new Date(e.target.value);
+
+        outputElement.textContent = isNaN(date) ? 'Please enter a valid date' : date.toUTCString();
+    });
+</script>

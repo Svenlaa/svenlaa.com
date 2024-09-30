@@ -84,3 +84,12 @@ a:hover {
     color: var(--stone-050);
     outline: 2px solid var(--color);
 }
+
+label {
+    display: block;
+    padding: 0.3em 0;
+}
+
+label > * {
+    display: block;
+}
