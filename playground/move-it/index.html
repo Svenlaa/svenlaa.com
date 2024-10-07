@@ -1,0 +1,64 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Playground</title>
+<meta property="og:image" content="https://svenlaa.com/og.jpg" />
+<link rel="stylesheet" href="/style.css" />
+
+<h1>Date to RFC-822</h1>
+<style>
+    :root {
+        --hour: 2em;
+    }
+
+    .background,
+    .foreground {
+        height: 3em;
+    }
+
+    .background {
+        background-color: var(--stone-200);
+    }
+
+    .foreground {
+        background-color: var(--amber);
+        cursor: move;
+    }
+</style>
+
+<div class="background" style="width: calc(24 * var(--hour))">
+    <div class="foreground" style="width: var(--hour)" data-start="0" data-end="1"></div>
+</div>
+
+<script>
+    const foreground = document.querySelector('.foreground');
+    let isDragging = false;
+    let initialHourBoudingBox = null;
+    let startingMousePosition = null;
+    let hourBoudingBox = null;
+
+    const calcuateMouseOffset = (box, position) => ({ x: position.x - box.x, y: position.y - box.y });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initialHourBoudingBox = foreground.getBoundingClientRect();
+        hourBoudingBox = initialHourBoudingBox;
+    });
+
+    foreground.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startingMousePosition = { x: e.clientX, y: e.clientY };
+        hourBoudingBox = foreground.getBoundingClientRect();
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const mousePosition = { x: e.clientX, y: e.clientY };
+        const xOffset = calcuateMouseOffset(initialHourBoudingBox, mousePosition).x;
+
+        const mouseInBoxOffset = startingMousePosition.x - hourBoudingBox.x;
+
+        foreground.style.marginLeft = `${xOffset - mouseInBoxOffset}px`;
+    });
+
+    document.addEventListener('mouseup', (e) => {
+        isDragging = false;
+    });
+</script>
