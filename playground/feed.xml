@@ -1,0 +1,19 @@
+<rss version="2.0">
+    <channel>
+        <title>Svenlaa</title>
+        <link>https://svenlaa.com</link>
+        <description>The site of Sven Lammertink</description>
+        <item>
+            <title>Move It</title>
+            <link>https://svenlaa.com/playground/move-it/</link>
+            <guid>https://svenlaa.com/playground/move-it/</guid>
+            <pubDate>Mon, 07 Oct 2024 20:13:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Date to RFC-822</title>
+            <link>https://svenlaa.com/playground/date-to-rfc-822/</link>
+            <guid>https://svenlaa.com/playground/date-to-rfc-822/</guid>
+            <pubDate>Mon, 30 Sep 2024 20:24:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
