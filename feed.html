@@ -2,7 +2,16 @@
 <title>The Bloggo - Svenlaa</title>
 <meta property="og:image" content="https://svenlaa.com/og.jpg" />
 <link rel="stylesheet" href="/style.css" />
-
+<style>
+    @keyframes example {
+        from {
+            background-color: initial;
+        }
+        to {
+            background-color: var(--color);
+        }
+    }
+</style>
 <script>
     const copyLink = (selector) => {
         const element = document.querySelector(selector);
@@ -10,6 +19,11 @@
         if (!text) {
             console.warn(`${selector} didn't contain any text`);
         }
+        const style = element.style;
+        element.style = 'background-color: var(--green); color: var(--stone-050);outline: 2px solid var(--green);';
+        setTimeout(() => {
+            element.style = style;
+        }, 500);
 
         navigator.clipboard.writeText(text);
     };
@@ -18,16 +32,16 @@
 <h1>Feed</h1>
 
 <h4 style="margin-bottom: 0.3em">Svenlaa.com feed</h4>
-<a id="link" href="https://svenlaa.com/feed.xml">https://svenlaa.com/feed.xml</a
-><button style="margin: 0 0.5em" onclick="copyLink('a#link')">Copy Link</button>
+<a id="rss_global" href="https://svenlaa.com/feed.xml">https://svenlaa.com/feed.xml</a
+><button style="margin: 0 0.5em" onclick="copyLink('a#rss_global')">Copy Link</button>
 
 <h4 style="margin-bottom: 0.3em">The Bloggo feed</h4>
-<a id="link" href="https://svenlaa.com/feed.xml">https://svenlaa.com/bloggo/feed.xml</a
-><button style="margin: 0 0.5em" onclick="copyLink('a#link')">Copy Link</button>
+<a id="rss_bloggo" href="https://svenlaa.com/feed.xml">https://svenlaa.com/bloggo/feed.xml</a
+><button style="margin: 0 0.5em" onclick="copyLink('a#rss_bloggo')">Copy Link</button>
 
 <h4 style="margin-bottom: 0.3em">The Playground feed</h4>
-<a id="link" href="https://svenlaa.com/feed.xml">https://svenlaa.com/playground/feed.xml</a
-><button style="margin: 0 0.5em" onclick="copyLink('a#link')">Copy Link</button>
+<a id="rss_playground" href="https://svenlaa.com/feed.xml">https://svenlaa.com/playground/feed.xml</a
+><button style="margin: 0 0.5em" onclick="copyLink('a#rss_playground')">Copy Link</button>
 
 <hr />
 <a href="/">Back to Svenlaa.com</a>
