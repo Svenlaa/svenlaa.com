@@ -4,6 +4,12 @@
         <link>https://svenlaa.com</link>
         <description>The site of Sven Lammertink</description>
         <item>
+            <title>RSS Feed</title>
+            <link>https://svenlaa.com/feed</link>
+            <guid>https://svenlaa.com/feed</guid>
+            <pubDate>Sun, 13 Oct 2024 13:04:00 GMT</pubDate>
+        </item>
+        <item>
             <title>Share it anyway</title>
             <link>https://svenlaa.com/bloggo/share/</link>
             <guid>https://svenlaa.com/bloggo/share/</guid>
