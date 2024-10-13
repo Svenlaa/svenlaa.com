@@ -1,8 +1,8 @@
 <rss version="2.0">
     <channel>
-        <title>Svenlaa</title>
-        <link>https://svenlaa.com</link>
-        <description>The site of Sven Lammertink</description>
+        <title>The Playground by Svenlaa</title>
+        <link>https://svenlaa.com/playground</link>
+        <description>The playground of Sven Lammertink</description>
         <item>
             <title>Move It</title>
             <link>https://svenlaa.com/playground/move-it/</link>

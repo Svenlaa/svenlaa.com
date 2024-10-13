@@ -1,8 +1,8 @@
 <rss version="2.0">
     <channel>
-        <title>Svenlaa</title>
-        <link>https://svenlaa.com</link>
-        <description>The site of Sven Lammertink</description>
+        <title>The Bloggo by Svenlaa</title>
+        <link>https://svenlaa.com/bloggo</link>
+        <description>The Bloggo of Sven Lammertink</description>
         <item>
             <title>Share it anyway</title>
             <link>https://svenlaa.com/bloggo/share/</link>
