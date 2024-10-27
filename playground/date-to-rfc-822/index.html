@@ -1,21 +1,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script defer data-domain="svenlaa.com" data-api="https://who.svenlaa.workers.dev/event" src="https://who.svenlaa.workers.dev/script.js"></script>
 <title>The Playground</title>
 <meta property="og:image" content="https://svenlaa.com/og.jpg" />
 <link rel="stylesheet" href="/style.css" />
 
 <h1>Date to RFC-822</h1>
-<p>
-    A small tool to convert anystring that javascript can understand as a string to RFC-822, the format RSS uses for
-    dates.
-</p>
+<p>A small tool to convert anystring that javascript can understand as a string to RFC-822, the format RSS uses for dates.</p>
 
 <label style="margin-bottom: 1em">
     Date String
     <input type="text" name="date" />
 </label>
 
-<span id="output" style="margin-right: 0.2em">Please enter a valid date</span
-><button type="button" onclick="copyText()" id="copy">Copy</button>
+<span id="output" style="margin-right: 0.2em">Please enter a valid date</span><button type="button" onclick="copyText()" id="copy">Copy</button>
 
 <script>
     const outputElement = document.querySelector('#output');
