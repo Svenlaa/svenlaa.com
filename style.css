@@ -57,6 +57,7 @@ ul {
 
 ul > li {
     list-style: '- ';
+    margin: 0.2em 0;
 }
 
 *::selection {
