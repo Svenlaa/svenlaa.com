@@ -53,11 +53,11 @@ h3 {
 
 ul {
     padding-inline-start: 1em;
-}
 
-ul > li {
-    list-style: '- ';
-    margin: 0.2em 0;
+    > li {
+        list-style: '- ';
+        margin: 0.2em 0;
+    }
 }
 
 *::selection {
@@ -69,28 +69,27 @@ a.big {
     padding: 0.1em;
     font-weight: bold;
     margin: 0 0.2em;
-}
 
-a.big:first-of-type {
-    margin-left: 0;
+    &:first-of-type {
+        margin-left: 0;
+    }
 }
 
 a {
     --color: var(--fuchsia);
     color: var(--color);
-}
 
-a:hover {
-    background-color: var(--color);
-    color: var(--stone-050);
-    outline: 2px solid var(--color);
+    &:hover {
+        background-color: var(--color);
+        color: var(--stone-050);
+        outline: 2px solid var(--color);
+    }
 }
 
 label {
     display: block;
     padding: 0.3em 0;
-}
-
-label > * {
-    display: block;
+    > * {
+        display: block;
+    }
 }
