@@ -4,6 +4,12 @@
         <link>https://svenlaa.com</link>
         <description>The site of Sven Lammertink</description>
         <item>
+            <title>hono-demo</title>
+            <link>https://hono-demo.svenlaa.com</link>
+            <guid>https://hono-demo.svenlaa.com</guid>
+            <pubDate>Sat, 02 Nov 2024 22:23:07 GMT</pubDate>
+        </item>
+        <item>
             <title>RSS Feed</title>
             <link>https://svenlaa.com/feed</link>
             <guid>https://svenlaa.com/feed</guid>
