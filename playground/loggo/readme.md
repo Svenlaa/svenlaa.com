@@ -1,10 +1,10 @@
-# Login source code
+# Loggo (an instance of [Login](https://todepond.com/lab/login)) source code
 
-this is the source code for [Login](https://todepond.com/lab/login/)
+this is the source code for [Loggo](https://svenlaa.com/playground/loggo/)
 
-- client side stuff in `index.html`
-- custom styles in `style.css`
-- server side stuff on my [val.town](https://www.val.town/u/todepond) (check `index.html` to find names of the different vals) 
+-   client side stuff in `index.html`
+-   custom styles in `style.css`
+-   server side stuff on my [val.town](https://www.val.town/u/svenlaa) (check `index.html` to find names of the different vals)
 
 ## Custom styles
 
