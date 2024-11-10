@@ -512,7 +512,8 @@
 
     function maybeAddActions({ actionsElement, password, admin, entry }) {
         const enabled = localStorage.getItem('labLoginAdmin') === 'true';
-        if (admin === ADMIN_NAME) {
+        console.log(entry.instance, INSTANCES[0].name);
+        if (admin === ADMIN_NAME && entry.instance === INSTANCES[0].name) {
             const kickNameButton = document.createElement('button');
             kickNameButton.classList.add('action-button');
             // banButton.className = "danger";
