@@ -437,10 +437,10 @@
         while (e < entries.length) {
             const entry = entries[e];
             const p = document.createElement('p');
-            p.className = 'post-' + entry.username + '@' + entry.instance + '@' + entry.instance;
+            p.className = 'post-' + entry.username + '@' + entry.instance;
             p.classList.add('status');
             const strong = document.createElement('strong');
-            strong.textContent = entry.username;
+            strong.textContent = entry.username + '@' + entry.instance;
             strong.className = 'name-' + entry.username + '@' + entry.instance;
             p.id = 'post-' + entry.username + '@' + entry.instance;
             const h3 = document.createElement('h3');
