@@ -84,6 +84,11 @@ a {
         color: var(--stone-050);
         outline: 2px solid var(--color);
     }
+
+    &:focus {
+        outline: 2px solid var(--color);
+        text-decoration: none;
+    }
 }
 
 label {
