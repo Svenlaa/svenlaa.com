@@ -32,3 +32,8 @@
 .at-lordcat\@svenlaa\.com::after {
     all: unset;
 }
+
+.name-Svenlaa\@svenlaa\.com {
+    color: var(--green);
+    font-family: 'JetBrains Mono', sans-serif;
+}
