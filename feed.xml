@@ -4,6 +4,12 @@
         <link>https://svenlaa.com</link>
         <description>The site of Sven Lammertink</description>
         <item>
+            <title>Loggo</title>
+            <link>https://svenlaa.com/playground/loggo/</link>
+            <guid>https://svenlaa.com/playground/loggo/</guid>
+            <pubDate>Sun, 10 Nov 2024 17:55:36 GMT</pubDate>
+        </item>
+        <item>
             <title>hono-demo</title>
             <link>https://hono-demo.svenlaa.com</link>
             <guid>https://hono-demo.svenlaa.com</guid>
