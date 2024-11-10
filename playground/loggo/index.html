@@ -114,9 +114,9 @@
               Pick a GIF
               <button type="submit" value="" class="close-button" autofocus>Close</button>
             </header>
-            <button class="gif" value="tode" title="Tode"><img src="/image/tode.gif" alt="Tode" /></button>
-            <button class="gif" value="berd" title="Berd"><img src="/image/berd.gif" alt="Berd" /></button>
-            <button class="gif" value="bot" title="Bot"><img src="/image/bot.gif" alt="Bot" /></button>
+            <button class="gif" value="tode" title="Tode"><img src="https://todepond.com/image/tode.gif" alt="Tode" /></button>
+            <button class="gif" value="berd" title="Berd"><img src="https://todepond.com/image/berd.gif" alt="Berd" /></button>
+            <button class="gif" value="bot" title="Bot"><img src="https://todepond.com/image/bot.gif" alt="Bot" /></button>
           </form>
         </dialog>
         <br /><br />
@@ -402,7 +402,7 @@
             span.className = 'status-' + entry.username;
 
             const img = status.querySelector('img.gif');
-            img.src = entry.gif ? `/image/${entry.gif}.gif` : '';
+            img.src = entry.gif ? `https://todepond.com/image/${entry.gif}.gif` : '';
             img.style.display = entry.gif ? 'block' : 'none';
 
             addUserActions({
