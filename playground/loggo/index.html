@@ -51,11 +51,17 @@
 <main></main>
 
 <script type="module">
-    const instances = [
+    const INSTANCES = [
         { name: 'svenlaa.com', url: 'https://svenlaa-lablogingetusers.web.val.run' },
         { name: 'todepond.com', url: 'https://todepond-lablogingetusers.web.val.run' },
         { name: 'evolved.systems', url: 'https://evol-lablogingetusers.web.val.run' },
     ];
+    const PAGE_PATH = '/playground/loggo/';
+    const ADMIN_NAME = 'Svenlaa';
+    const DELETE_ACCOUNT_URL = 'https://svenlaa-lablogindeleteaccount.web.val.run';
+    const UPDATE_STATUS_URL = 'https://svenlaa-labloginupdatestatus.web.val.run';
+    const BAN_USER_URL = 'https://svenlaa-labloginbanuser.web.val.run';
+    const LOGIN_URL = 'https://svenlaa-lablogin.web.val.run';
     const refreshSign = document.querySelector('#refresh-sign');
     const loadingFeed = document.querySelector('#loading-feed');
     const usernameInput = document.querySelector('#username');
@@ -87,7 +93,7 @@
         submitButton.textContent = 'Logging in...';
 
         loadingFeed.style.display = 'block';
-        const response = await fetch('https://svenlaa-lablogin.web.val.run', {
+        const response = await fetch(LOGIN_URL, {
             method: 'POST',
             body: JSON.stringify({ username, password }),
         });
@@ -105,7 +111,7 @@
             const namey = document.createElement('span');
             // <span class="name-${username}">${username}</span>!`;
             namey.textContent = username;
-            namey.className = `name-${username}@${instances[0].name}`;
+            namey.className = `name-${username}@${INSTANCES[0].name}`;
             h1.appendChild(namey);
             h1.append('!');
             let html = `
@@ -127,7 +133,7 @@
         <br /><br />
         <span class="account-dashboard">
           <span class="account-actions">
-            <button onclick="location.href = '/playground/loggo/?logout';" class="">Switch account</button>
+            <button onclick="location.href = '${PAGE_PATH}?logout';" class="">Switch account</button>
             <button id="delete-account" class="danger">Delete account</button>
           </span>
       `;
@@ -143,7 +149,7 @@
               } />
             </label>
           ${
-              username === 'Svenlaa'
+              username === ADMIN_NAME
                   ? `
                 <label for="admin-toggle">
                   Admin controls
@@ -178,7 +184,7 @@
                     return;
                 }
                 loadingFeed.style.display = 'block';
-                const response = await fetch('https://svenlaa-lablogindeleteaccount.web.val.run', {
+                const response = await fetch(DELETE_ACCOUNT_URL, {
                     method: 'POST',
                     body: JSON.stringify({ username, password }),
                 });
@@ -189,7 +195,7 @@
                 } else {
                     localStorage.removeItem('labLoginUsername');
                     localStorage.removeItem('labLoginPassword');
-                    location.href = '/playground/loggo/?delete';
+                    location.href = PAGE_PATH + '?delete';
                 }
             });
             const statusInput = document.querySelector('#status');
@@ -231,7 +237,7 @@
             return;
         }
 
-        const response = await fetch('https://svenlaa-labloginupdatestatus.web.val.run', {
+        const response = await fetch(UPDATE_STATUS_URL, {
             method: 'POST',
             body: JSON.stringify({ status, username, password, gif }),
         });
@@ -271,10 +277,9 @@
         if (refreshTimeout !== undefined) {
             clearTimeout(refreshTimeout);
         }
-        // https://svenlaa-lablogingetusers.web.val.run
 
         const entries = [];
-        for (const instance of instances) {
+        for (const instance of INSTANCES) {
             const response = await fetch(instance.url);
             const json = await response.json();
             for (const user of json) {
@@ -404,7 +409,7 @@
 
             const span = status.querySelector('span');
             span.innerHTML = getHtmlFromMarkdown(entry.status);
-            if (entry.username === 'Svenlaa') {
+            if (entry.username === ADMIN_NAME) {
                 // protip: log from individual user
                 // console.log(entry.status);
             }
@@ -502,7 +507,7 @@
 
     function maybeAddActions({ actionsElement, password, admin, entry }) {
         const enabled = localStorage.getItem('labLoginAdmin') === 'true';
-        if (admin === 'Svenlaa') {
+        if (admin === ADMIN_NAME) {
             const kickNameButton = document.createElement('button');
             kickNameButton.classList.add('action-button');
             // banButton.className = "danger";
@@ -557,7 +562,7 @@
         }
 
         loadingFeed.style.display = 'block';
-        fetch('https://svenlaa-labloginbanuser.web.val.run', {
+        fetch(BAN_USER_URL, {
             method: 'POST',
             body: JSON.stringify({ username, password, admin, type, target }),
         })
@@ -737,10 +742,10 @@
     const urlQuery = new URLSearchParams(window.location.search);
     if (urlQuery.has('logout')) {
         // remove the query from the url
-        window.history.replaceState({}, '', '/playground/loggo/');
+        window.history.replaceState({}, '', PAGE_PATH);
     } else if (urlQuery.has('delete')) {
         // remove the query from the url
-        window.history.replaceState({}, '', '/playground/loggo');
+        window.history.replaceState({}, '', PAGE_PATH);
         passwordInput.value = '';
         usernameInput.value = '';
     } else if (usernameInput.value && passwordInput.value && localStorage.getItem('labLoginAutoLogin') !== 'false') {
@@ -755,7 +760,7 @@
     // loadingFeed.style.display = "none";
 
     const header = document.querySelector('header');
-    // if (usernameInput.value === "Svenlaa") {
+    // if (usernameInput.value === ADMIN_NAME) {
     // const spannn = document.createElement("span");
     // spannn.innerHTML = `
     //         <span style="float: right">
@@ -803,7 +808,7 @@
     addEventListener('pointerdown', (event) => {
         // clear anchor from url, eg: #post-TodePond
         // but don't navigate or anything.
-        window.history.replaceState({}, '', '/playground/loggo/');
+        window.history.replaceState({}, '', PAGE_PATH);
 
         document.body.classList.add('untarget');
     });
