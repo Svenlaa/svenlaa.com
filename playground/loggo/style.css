@@ -205,7 +205,8 @@ input[type='checkbox'] {
 /* ======== */
 /* lord cat */
 /* ======== */
-.name-lord.cat\@todepond\.com {
+
+.name-lord.cat\@todepond\.com, .name-lordcat\@svenlaa\.com {
     background: linear-gradient(to right, #c5a4ed, #a4a5ed 100%);
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -213,7 +214,7 @@ input[type='checkbox'] {
     font-size: 1.2em;
 }
 
-.at-lord.cat\@todepond\.com:hover {
+.at-lord.cat\@todepond\.com:hover, .at-lordcat\@svenlaa\.com:hover {
     background-image: none;
     background-clip: unset;
     background-color: white;
@@ -221,7 +222,7 @@ input[type='checkbox'] {
     -webkit-text-fill-color: unset;
 }
 
-.name-lord.cat\@todepond\.com::after {
+.name-lord.cat\@todepond\.com::after, .name-lordcat\@svenlaa\.com::after {
     content: 'Blåhaj Collector';
     border-width: 1px;
     border-style: solid;
@@ -236,7 +237,7 @@ input[type='checkbox'] {
     background-clip: text;
 }
 
-.at-lord.cat\@todepond\.com::after {
+.at-lord.cat\@todepond\.com::after, .at-lordcat\@svenlaa\.com::after {
     all: unset;
 }
 
