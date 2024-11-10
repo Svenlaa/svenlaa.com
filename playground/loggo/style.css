@@ -221,7 +221,7 @@ input[type='checkbox'] {
     -webkit-text-fill-color: unset;
 }
 
-.name-lord.cat:\@todepond:after {
+.name-lord.cat\@todepond::after {
     content: 'Blåhaj Collector';
     border-width: 1px;
     border-style: solid;
