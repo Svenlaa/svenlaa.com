@@ -1,0 +1,469 @@
+@import url("https://fonts.cdnfonts.com/css/jetbrains-mono");
+@import url("https://fonts.cdnfonts.com/css/restless-soul-bb");
+@import url("https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap");
+
+/* =========== */
+/* Login stuff */
+/* =========== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.account-dashboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  gap: 5px 10px;
+}
+
+.account-settings {
+  display: flex;
+  flex-direction: column;
+  /* float: right; */
+  align-items: flex-end;
+  margin-top: 10px;
+  flex-shrink: 0;
+}
+
+.account-settings > label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  /* border: 1px solid var(--best-colour); */
+  cursor: pointer;
+  /* padding: 0px 0px 0px 5px; */
+  /* color: var(--best-colour); */
+  /* accent-color: var(--best-colour); */
+}
+
+.account-settings > label > input[type="checkbox"] {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+#feed-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#refresh-sign {
+  color: var(--best-colour);
+  cursor: pointer;
+  user-select: none;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 16px;
+  float: right;
+  flex-shrink: 0;
+}
+
+#refresh-sign:hover {
+  background-color: var(--best-colour);
+  color: var(--shade-3);
+  outline: 2px solid var(--best-colour);
+}
+
+.post-title {
+  all: unset;
+}
+
+.user-actions {
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.actions {
+  display: inline-block;
+}
+
+.action-button {
+  font-size: 0.8em;
+}
+
+.at {
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.at:hover {
+  background-image: none;
+  background-color: white;
+  color: var(--shade-3);
+  outline-color: white;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
+}
+
+.untarget :target {
+  outline-color: transparent;
+}
+
+#gif-dialog {
+  background-color: var(--shade-4);
+  color: white;
+}
+
+#gif-dialog header {
+  align-items: baseline;
+  display: flex;
+  margin-bottom: 4px;
+}
+
+#gif-dialog .close-button {
+  margin-left: auto;
+}
+
+/* ============ */
+/* UsrBinAnnika */
+/* ============ */
+.status-UsrBinAnnika {
+  transform: rotate(-0.5deg);
+}
+
+.name-UsrBinAnnika::after {
+  content: "⚠️ DORK";
+  border: 1px solid hsl(42.2, 100%, 63.7%);
+  color: hsl(42.2, 100%, 63.7%);
+  padding: 0.1em 0.2em;
+  margin: 0.35em;
+  font-size: 0.6em;
+  position: relative;
+  top: -0.25em;
+  font-weight: normal;
+}
+
+.name-maybeanerd::after {
+  content: "NERD";
+  border: 1px dashed red;
+  color: red;
+  padding: 0.1em 0.2em;
+  margin: 0.35em;
+  font-size: 0.6em;
+  position: relative;
+  top: -0.25em;
+  font-weight: normal;
+}
+
+.at-UsrBinAnnika:hover::after {
+  border-color: var(--shade-3);
+  color: var(--shade-3);
+}
+
+/* ==== */
+/* Rosy */
+/* ==== */
+.name-Rosy {
+  color: var(--red);
+  font-family: "JetBrains Mono", sans-serif;
+}
+/* perhaps some sort of user tags system would be good to prevent long gradients being placed everywhere? */
+.name-Rosy::after {
+  content: "trans";
+  background: linear-gradient(
+    180deg,
+    rgba(91, 206, 250, 1) 0%,
+    rgba(91, 206, 250, 1) 19.9%,
+    rgba(245, 169, 184, 1) 20%,
+    rgba(245, 169, 184, 1) 39.9%,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(255, 255, 255, 1) 59.9%,
+    rgba(245, 169, 184, 1) 60%,
+    rgba(245, 169, 184, 1) 79.9%,
+    rgba(91, 206, 250, 1) 80%
+  );
+  -webkit-text-fill-color: transparent;
+  padding: 0.1em 0.2em;
+  margin: 0.35em;
+  font-size: 0.6em;
+  top: -0.25em;
+  position: relative;
+  font-weight: normal;
+}
+
+.at-Rosy::after {
+  all: unset;
+}
+
+/* ======== */
+/* lord cat */
+/* ======== */
+.name-lord.cat {
+  background: linear-gradient(to right, #c5a4ed, #a4a5ed 100%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: "UnifrakturMaguntia";
+  font-size: 1.2em;
+}
+
+.at-lord.cat:hover {
+  background-image: none;
+  background-clip: unset;
+  background-color: white;
+  color: var(--shade-3);
+  -webkit-text-fill-color: unset;
+}
+
+.name-lord.cat::after {
+  content: "Blåhaj Collector";
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #c5a4ed, #a4a5ed 100%) 1;
+  padding: 0.1em 0.2em;
+  margin: 0.35em;
+  font-size: 0.6em;
+  position: relative;
+  top: -0.25em;
+  font-weight: normal;
+  background: linear-gradient(to right, #c5a4ed, #a4a5ed 100%);
+  background-clip: text;
+}
+
+.at-lord.cat::after {
+  all: unset;
+}
+
+/* ======= */
+/* Svenlaa */
+/* ======= */
+.name-Svenlaa {
+  background: linear-gradient(to right, var(--yellow), var(--green) 200%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: "JetBrains Mono", sans-serif;
+}
+
+/* ========== */
+/* HatsuSixty */
+/* ========== */
+.name-HatsuSixty {
+  background: linear-gradient(to right, var(--pink), var(--purple) 200%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ======== */
+/* hivemind */
+/* ======== */
+.name-hivemind {
+  background: linear-gradient(180deg, rgb(248 22 22) 20%, rgb(200 66 36) 100%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: "Restless Soul BB", sans-serif;
+  font-size: 1.2em;
+}
+
+/* =========== */
+/* HatsuneMiku */
+/* =========== */
+.name-HatsuneMiku {
+  background: linear-gradient(to right, #87e5cf, #47c8c0 100%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ======== */
+/* TodePond */
+/* ======== */
+.name-TodePond {
+  color: var(--green);
+}
+
+.name-TodePond::after {
+  content: "ADMIN";
+  border: 1px solid var(--green);
+  padding: 0.1em 0.2em;
+  margin: 0.35em;
+  font-size: 0.6em;
+  top: -0.25em;
+  position: relative;
+  font-weight: normal;
+}
+
+.at-TodePond.name-TodePond:hover::after {
+  border-color: var(--shade-3);
+}
+
+/* =========== */
+/* PodeTond 💚 */
+/* =========== */
+.name-PodeTond.💚 {
+  background: linear-gradient(
+    to right,
+    #eaacb8 20%,
+    #7acbf5 80%,
+    var(--green) 80%,
+    var(--green) 100%
+  );
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block; /* so it doesnt cut the heart */
+  font-family: "JetBrains Mono", sans-serif;
+}
+
+.at-PodeTond.💚:hover {
+  background-image: none;
+  background-clip: unset;
+  background-color: white;
+  color: var(--shade-3);
+  -webkit-text-fill-color: unset;
+}
+
+/* ==== */
+/*  El  */
+/* ==== */
+@media (prefers-reduced-motion: no-preference) {
+  .name-El {
+    animation: 30s linear 0s infinite alternate el-color-shift;
+  }
+}
+@keyframes el-color-shift {
+  0% {
+    color: lch(90% 90 209.2);
+  }
+  50% {
+    color: lch(90% 90 431.4);
+  }
+  100% {
+    color: lch(90% 90 368.7);
+  }
+}
+
+/* ===== */
+/* sofia */
+/* ===== */
+.name-sofia {
+  letter-spacing: 0.5em;
+  color: transparent;
+  background: linear-gradient(to bottom, #fff 50%, #80ff00 100%);
+  background-clip: text;
+  text-shadow: 0 0 0.125em #80ff0080;
+}
+
+/* ====== */
+/* minion */
+/* ====== */
+:root {
+  --minion-red: #f27878;
+}
+
+.title-minion::after {
+  content: "NOT ADMIN";
+  color: var(--minion-red);
+  border: 1px solid var(--minion-red);
+  padding: 0.1em 0.2em;
+  margin: 0.35em;
+  font-size: 0.6em;
+  top: -0.2em;
+  position: relative;
+  background-image: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 200, 150, 0.5) 34%,
+    transparent 60%
+  );
+  background-size: 50px;
+  background-repeat: no-repeat;
+  background-position: 200%;
+}
+
+.name-minion {
+  color: var(--minion-red);
+}
+
+.name-minion::before,
+.name-minion::after {
+  content: "✨";
+  font-size: 0.5em;
+  position: relative;
+  top: -0.3em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .title-minion::after {
+    -webkit-animation: minion-badgeSwish 10s ease-in-out infinite;
+    -moz-animation: minion-badgeSwish 10s ease-in-out infinite;
+    animation: minion-badgeSwish 10s ease-in-out infinite;
+  }
+}
+
+@-webkit-keyframes minion-badgeSwish {
+  0% {
+    background-position: 500px;
+  }
+  100% {
+    background-position: -50px;
+  }
+}
+@-moz-keyframes minion-badgeSwish {
+  0% {
+    background-position: 500px;
+  }
+  100% {
+    background-position: -50px;
+  }
+}
+@keyframes minion-badgeSwish {
+  0% {
+    background-position: 500px;
+  }
+  100% {
+    background-position: -50px;
+  }
+}
+
+/* ==== */
+/* R74n */
+/* ==== */
+.name-R74n {
+  color: #00ffff;
+}
+.name-R74n::after {
+  content: " 🔒";
+}
+
+/* ====== */
+/* soxfox */
+/* ====== */
+.name-soxfox {
+  color: transparent;
+  background: linear-gradient(150deg, #f4218f, #ff9e00);
+  background-clip: text;
+}
+
+.name-soxfox::after {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 0.6em;
+  background: linear-gradient(150deg, #f4218f, #ff9e00);
+  margin-left: 0.2em;
+  mask: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzAwIDE4NyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWw6c3BhY2U9InByZXNlcnZlIiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjIiPjxwYXRoIGQ9Im0xNDcgMTQ3LTYgMTFjLTYgOS0xNCAxNi0yNiAyMWExNDcgMTQ3IDAgMCAxLTgzIDJjLTEzLTUtMjQtMTAtMzItMTZsMTQtMzFhMTAzIDEwMyAwIDAgMCA1OSAxOWMxMiAwIDIxLTIgMjctNiA1LTMgOC04IDgtMTQgMC00LTEtNy01LTEwLTMtMy03LTUtMTMtN2wtMjEtNi0zNC05Yy04LTQtMTYtOS0yMi0xNlM0IDY4IDQgNTZjMC0xMCAyLTIwIDgtMjggNi05IDE0LTE2IDI2LTIxYTEzOCAxMzggMCAwIDEgNzUtM2MxMSAzIDIxIDcgMjkgMTJsLTEzIDMyYy0xNy0xMC0zMy0xNS01MC0xNS0xMSAwLTIwIDItMjYgNi01IDQtOCA5LTggMTVzMyAxMSAxMCAxNGM2IDMgMTYgNiAyOSA5YTI5MyAyOTMgMCAwIDEgNDQgMTRsMzUtODhoMTM2bC0xMyAzNGgtOTRsLTIwIDQ3aDg0bC0xNCAzM2gtODNsLTEyIDMwWiIvPjwvc3ZnPg==")
+    no-repeat center;
+}
+
+/* ======= */
+/* Tristie */
+/* ======= */
+.name-Tristie {
+  background: linear-gradient(#31d0a6, #105e58);
+  background-clip: text;
+  color: transparent;
+}
