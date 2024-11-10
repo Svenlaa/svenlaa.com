@@ -104,7 +104,7 @@
             const namey = document.createElement('span');
             // <span class="name-${username}">${username}</span>!`;
             namey.textContent = username;
-            namey.className = `name-${username}`;
+            namey.className = `name-${username}@${instances[0].name}`;
             h1.appendChild(namey);
             h1.append('!');
             let html = `
