@@ -9,7 +9,7 @@
 <title>Loggo</title>
 <meta property="og:image" content="https://svenlaa.com/og.jpg" />
 
-<link rel="stylesheet" href="/style.css" />
+<!-- <link rel="stylesheet" href="/style.css" /> -->
 <link rel="stylesheet" href="https://todepond.com/style.css" />
 <link rel="stylesheet" href="./style.css" />
 
@@ -269,7 +269,8 @@
         // https://svenlaa-lablogingetusers.web.val.run
 
         const entries = [];
-        const response = await fetch('https://svenlaa-lablogingetusers.web.val.run');
+        for (const instance of ['svenlaa', 'todepond']) {
+            const response = await fetch(`https://${instance}-lablogingetusers.web.val.run`);
         const json = await response.json();
         for (const user of json) {
             const [status, username, timestamp, gif] = user;
@@ -280,7 +281,9 @@
                 username,
                 timestamp: new Date(timestamp),
                 gif: isGifValid ? gif : undefined,
+                    instance,
             });
+        }
         }
         const sortedEntries = entries.sort((a, b) => b.timestamp - a.timestamp);
 
