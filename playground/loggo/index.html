@@ -286,6 +286,9 @@
             const json = await response.json();
             for (const user of json) {
                 const [status, username, timestamp, gif] = user;
+                if (new Date(timestamp) > new Date()) {
+                    continue;
+                }
 
                 const isGifValid = /^(tode|berd|bot)$/.test(gif);
                 entries.push({
