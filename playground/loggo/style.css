@@ -134,11 +134,11 @@ input[type='checkbox'] {
 /* ============ */
 /* UsrBinAnnika */
 /* ============ */
-.status-UsrBinAnnika\@todepond {
+.status-UsrBinAnnika\@todepond\.com {
     transform: rotate(-0.5deg);
 }
 
-.name-UsrBinAnnika\@todepond::after {
+.name-UsrBinAnnika\@todepond\.com::after {
     content: '⚠️ DORK';
     border: 1px solid hsl(42.2, 100%, 63.7%);
     color: hsl(42.2, 100%, 63.7%);
@@ -150,7 +150,7 @@ input[type='checkbox'] {
     font-weight: normal;
 }
 
-.name-maybeanerd\@todepond::after {
+.name-maybeanerd\@todepond\.com::after {
     content: 'NERD';
     border: 1px dashed red;
     color: red;
@@ -162,7 +162,7 @@ input[type='checkbox'] {
     font-weight: normal;
 }
 
-.at-UsrBinAnnika\@todepond:hover::after {
+.at-UsrBinAnnika\@todepond\.com:hover::after {
     border-color: var(--shade-3);
     color: var(--shade-3);
 }
@@ -170,12 +170,12 @@ input[type='checkbox'] {
 /* ==== */
 /* Rosy */
 /* ==== */
-.name-Rosy\@todepond {
+.name-Rosy\@todepond\.com {
     color: var(--red);
     font-family: 'JetBrains Mono', sans-serif;
 }
 /* perhaps some sort of user tags system would be good to prevent long gradients being placed everywhere? */
-.name-Rosy\@todepond::after {
+.name-Rosy\@todepond\.com::after {
     content: 'trans';
     background: linear-gradient(
         180deg,
@@ -198,14 +198,14 @@ input[type='checkbox'] {
     font-weight: normal;
 }
 
-.at-Rosy\@todepond::after {
+.at-Rosy\@todepond\.com::after {
     all: unset;
 }
 
 /* ======== */
 /* lord cat */
 /* ======== */
-.name-lord.cat\@todepond {
+.name-lord.cat\@todepond\.com {
     background: linear-gradient(to right, #c5a4ed, #a4a5ed 100%);
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -213,7 +213,7 @@ input[type='checkbox'] {
     font-size: 1.2em;
 }
 
-.at-lord.cat\@todepond:hover {
+.at-lord.cat\@todepond\.com:hover {
     background-image: none;
     background-clip: unset;
     background-color: white;
@@ -221,7 +221,7 @@ input[type='checkbox'] {
     -webkit-text-fill-color: unset;
 }
 
-.name-lord.cat\@todepond::after {
+.name-lord.cat\@todepond\.com::after {
     content: 'Blåhaj Collector';
     border-width: 1px;
     border-style: solid;
@@ -236,21 +236,21 @@ input[type='checkbox'] {
     background-clip: text;
 }
 
-.at-lord.cat\@todepond::after {
+.at-lord.cat\@todepond\.com::after {
     all: unset;
 }
 
 /* ======= */
 /* Svenlaa */
 /* ======= */
-.name-Svenlaa\@todepond {
+.name-Svenlaa\@todepond\.com {
     background: linear-gradient(to right, var(--yellow), var(--green) 200%);
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-family: 'JetBrains Mono', sans-serif;
 }
 
-.name-Svenlaa\@svenlaa {
+.name-Svenlaa\@svenlaa\.com {
     color: var(--green);
     font-family: 'JetBrains Mono', sans-serif;
 }
@@ -258,7 +258,7 @@ input[type='checkbox'] {
 /* ========== */
 /* HatsuSixty */
 /* ========== */
-.name-HatsuSixty\@todepond {
+.name-HatsuSixty\@todepond\.com {
     background: linear-gradient(to right, var(--pink), var(--purple) 200%);
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -267,7 +267,7 @@ input[type='checkbox'] {
 /* ======== */
 /* hivemind */
 /* ======== */
-.name-hivemind\@todepond {
+.name-hivemind\@todepond\.com {
     background: linear-gradient(180deg, rgb(248 22 22) 20%, rgb(200 66 36) 100%);
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -278,7 +278,7 @@ input[type='checkbox'] {
 /* =========== */
 /* HatsuneMiku */
 /* =========== */
-.name-HatsuneMiku\@todepond {
+.name-HatsuneMiku\@todepond\.com {
     background: linear-gradient(to right, #87e5cf, #47c8c0 100%);
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -287,11 +287,11 @@ input[type='checkbox'] {
 /* ======== */
 /* TodePond */
 /* ======== */
-.name-TodePond\@todepond {
+.name-TodePond\@todepond\.com {
     color: var(--green);
 }
 
-.name-TodePond\@todepond::after {
+.name-TodePond\@todepond\.com::after {
     content: 'ADMIN';
     border: 1px solid var(--green);
     padding: 0.1em 0.2em;
@@ -302,14 +302,14 @@ input[type='checkbox'] {
     font-weight: normal;
 }
 
-.at-TodePond\@todepond.name-TodePond\@todepond:hover::after {
+.at-TodePond\@todepond\.com.name-TodePond\@todepond\.com:hover::after {
     border-color: var(--shade-3);
 }
 
 /* =========== */
 /* PodeTond 💚 */
 /* =========== */
-.name-PodeTond.💚\@todepond {
+.name-PodeTond.💚\@todepond\.com {
     background: linear-gradient(to right, #eaacb8 20%, #7acbf5 80%, var(--green) 80%, var(--green) 100%);
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -317,7 +317,7 @@ input[type='checkbox'] {
     font-family: 'JetBrains Mono', sans-serif;
 }
 
-.at-PodeTond.💚\@todepond:hover {
+.at-PodeTond.💚\@todepond\.com:hover {
     background-image: none;
     background-clip: unset;
     background-color: white;
@@ -329,7 +329,7 @@ input[type='checkbox'] {
 /*  El  */
 /* ==== */
 @media (prefers-reduced-motion: no-preference) {
-    .name-El\@todepond {
+    .name-El\@todepond\.com {
         animation: 30s linear 0s infinite alternate el-color-shift;
     }
 }
@@ -348,7 +348,7 @@ input[type='checkbox'] {
 /* ===== */
 /* sofia */
 /* ===== */
-.name-sofia\@todepond {
+.name-sofia\@todepond\.com {
     letter-spacing: 0.5em;
     color: transparent;
     background: linear-gradient(to bottom, #fff 50%, #80ff00 100%);
@@ -363,7 +363,7 @@ input[type='checkbox'] {
     --minion-red: #f27878;
 }
 
-.title-minion\@todepond::after {
+.title-minion\@todepond\.com::after {
     content: 'NOT ADMIN';
     color: var(--minion-red);
     border: 1px solid var(--minion-red);
@@ -378,12 +378,12 @@ input[type='checkbox'] {
     background-position: 200%;
 }
 
-.name-minion\@todepond {
+.name-minion\@todepond\.com {
     color: var(--minion-red);
 }
 
-.name-minion\@todepond::before,
-.name-minion\@todepond::after {
+.name-minion\@todepond\.com::before,
+.name-minion\@todepond\.com::after {
     content: '✨';
     font-size: 0.5em;
     position: relative;
@@ -391,7 +391,7 @@ input[type='checkbox'] {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .title-minion\@todepond::after {
+    .title-minion\@todepond\.com::after {
         -webkit-animation: minion-badgeSwish 10s ease-in-out infinite;
         -moz-animation: minion-badgeSwish 10s ease-in-out infinite;
         animation: minion-badgeSwish 10s ease-in-out infinite;
@@ -426,23 +426,23 @@ input[type='checkbox'] {
 /* ==== */
 /* R74n */
 /* ==== */
-.name-R74n\@todepond {
+.name-R74n\@todepond\.com {
     color: #00ffff;
 }
-.name-R74n\@todepond::after {
+.name-R74n\@todepond\.com::after {
     content: ' 🔒';
 }
 
 /* ====== */
 /* soxfox */
 /* ====== */
-.name-soxfox\@todepond {
+.name-soxfox\@todepond\.com {
     color: transparent;
     background: linear-gradient(150deg, #f4218f, #ff9e00);
     background-clip: text;
 }
 
-.name-soxfox\@todepond::after {
+.name-soxfox\@todepond\.com::after {
     content: '';
     display: inline-block;
     width: 1em;
@@ -456,7 +456,7 @@ input[type='checkbox'] {
 /* ======= */
 /* Tristie */
 /* ======= */
-.name-Tristie\@todepond {
+.name-Tristie\@todepond\.com {
     background: linear-gradient(#31d0a6, #105e58);
     background-clip: text;
     color: transparent;
