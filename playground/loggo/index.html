@@ -138,7 +138,7 @@
               } />
             </label>
           ${
-              username === 'TodePond'
+              username === 'Svenlaa'
                   ? `
                 <label for="admin-toggle">
                   Admin controls
@@ -271,19 +271,19 @@
         const entries = [];
         for (const instance of ['svenlaa', 'todepond']) {
             const response = await fetch(`https://${instance}-lablogingetusers.web.val.run`);
-        const json = await response.json();
-        for (const user of json) {
-            const [status, username, timestamp, gif] = user;
+            const json = await response.json();
+            for (const user of json) {
+                const [status, username, timestamp, gif] = user;
 
-            const isGifValid = /^(tode|berd|bot)$/.test(gif);
-            entries.push({
-                status,
-                username,
-                timestamp: new Date(timestamp),
-                gif: isGifValid ? gif : undefined,
+                const isGifValid = /^(tode|berd|bot)$/.test(gif);
+                entries.push({
+                    status,
+                    username,
+                    timestamp: new Date(timestamp),
+                    gif: isGifValid ? gif : undefined,
                     instance,
-            });
-        }
+                });
+            }
         }
         const sortedEntries = entries.sort((a, b) => b.timestamp - a.timestamp);
 
@@ -386,23 +386,24 @@
             if (!status) {
                 break;
             }
-            status.className = 'post-' + entry.username;
+            status.className = 'post-' + entry.username + '@' + entry.instance;
             status.classList.add('status');
+            status.classList.add('instance-' + entry.instance);
             const strong = status.querySelector('strong');
-            status.id = 'post-' + entry.username;
-            strong.className = 'name-' + entry.username;
+            status.id = 'post-' + entry.username + '@' + entry.instance;
+            strong.className = 'name-' + entry.username + '@' + entry.instance;
             strong.textContent = entry.username;
             const h3 = status.querySelector('h3');
-            h3.className = 'title-' + entry.username;
+            h3.className = 'title-' + entry.username + '@' + entry.instance;
             h3.classList.add('post-title');
 
             const span = status.querySelector('span');
             span.innerHTML = getHtmlFromMarkdown(entry.status);
-            if (entry.username === 'TodePond') {
+            if (entry.username === 'Svenlaa') {
                 // protip: log from individual user
                 // console.log(entry.status);
             }
-            span.className = 'status-' + entry.username;
+            span.className = 'status-' + entry.username + '@' + entry.instance;
 
             const img = status.querySelector('img.gif');
             img.src = entry.gif ? `https://todepond.com/image/${entry.gif}.gif` : '';
@@ -436,21 +437,21 @@
         while (e < entries.length) {
             const entry = entries[e];
             const p = document.createElement('p');
-            p.className = 'post-' + entry.username;
+            p.className = 'post-' + entry.username + '@' + entry.instance + '@' + entry.instance;
             p.classList.add('status');
             const strong = document.createElement('strong');
             strong.textContent = entry.username;
-            strong.className = 'name-' + entry.username;
-            p.id = 'post-' + entry.username;
+            strong.className = 'name-' + entry.username + '@' + entry.instance;
+            p.id = 'post-' + entry.username + '@' + entry.instance;
             const h3 = document.createElement('h3');
-            h3.className = 'title-' + entry.username;
+            h3.className = 'title-' + entry.username + '@' + entry.instance;
             h3.classList.add('post-title');
             p.appendChild(h3);
             h3.appendChild(strong);
             const br = document.createElement('br');
             p.appendChild(br);
             const span = document.createElement('span');
-            span.className = 'status-' + entry.username;
+            span.className = 'status-' + entry.username + '@' + entry.instance;
             span.innerHTML = getHtmlFromMarkdown(entry.status);
             span.style.maxHeight = '90px';
             span.style.overflowY = 'auto';
@@ -496,7 +497,7 @@
 
     function maybeAddActions({ actionsElement, password, admin, entry }) {
         const enabled = localStorage.getItem('labLoginAdmin') === 'true';
-        if (admin === 'TodePond') {
+        if (admin === 'Svenlaa') {
             const kickNameButton = document.createElement('button');
             kickNameButton.classList.add('action-button');
             // banButton.className = "danger";
@@ -748,7 +749,7 @@
     // loadingFeed.style.display = "none";
 
     const header = document.querySelector('header');
-    // if (usernameInput.value === "TodePond") {
+    // if (usernameInput.value === "Svenlaa") {
     // const spannn = document.createElement("span");
     // spannn.innerHTML = `
     //         <span style="float: right">
