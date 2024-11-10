@@ -1,0 +1,34 @@
+.name-lordcat\@svenlaa\.com {
+    background: linear-gradient(to right, #c5a4ed, #a4a5ed 100%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'UnifrakturMaguntia';
+    font-size: 1.2em;
+}
+
+.at-lordcat\@svenlaa\.com:hover {
+    background-image: none;
+    background-clip: unset;
+    background-color: white;
+    color: var(--shade-3);
+    -webkit-text-fill-color: unset;
+}
+
+.name-lordcat\@svenlaa\.com::after {
+    content: 'Blåhaj Collector';
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #c5a4ed, #a4a5ed 100%) 1;
+    padding: 0.1em 0.2em;
+    margin: 0.35em;
+    font-size: 0.6em;
+    position: relative;
+    top: -0.25em;
+    font-weight: normal;
+    background: linear-gradient(to right, #c5a4ed, #a4a5ed 100%);
+    background-clip: text;
+}
+
+.at-lordcat\@svenlaa\.com::after {
+    all: unset;
+}
