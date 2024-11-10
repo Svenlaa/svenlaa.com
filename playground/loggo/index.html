@@ -298,7 +298,7 @@
         } catch (e) {
             users = [];
         }
-        const usernames = users.map((v) => v.username);
+        const usernames = users.map((v) => v.username + '@' + v.instance);
         nameSet = new Set(usernames);
 
         const localRefreshStatus = getLocalRefreshStatus();
@@ -725,7 +725,8 @@
     } catch (e) {
         parsedLocalStatuses = [];
     }
-    nameSet = new Set(parsedLocalStatuses.map((v) => v.username));
+    console.log(parsedLocalStatuses);
+    nameSet = new Set(parsedLocalStatuses.map((v) => v.username + '' + v.instance));
     renderUserStatuses(parsedLocalStatuses);
 
     const urlQuery = new URLSearchParams(window.location.search);
