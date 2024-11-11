@@ -51,18 +51,8 @@
 <main></main>
 
 <script type="module">
-    const INSTANCES = [
-        { name: 'svenlaa.com', url: 'https://svenlaa-lablogingetusers.web.val.run' },
-        { name: 'todepond.com', url: 'https://todepond-lablogingetusers.web.val.run' },
-        { name: 'evolved.systems', url: 'https://evol-lablogingetusers.web.val.run' },
-        { name: 'rossilaz.xyz', url: 'https://mittzy-loginredux_getusers.web.val.run' },
-    ];
+    import { config } from './logiverse.js';
     const PAGE_PATH = '/playground/loggo/';
-    const ADMIN_NAME = 'Svenlaa';
-    const DELETE_ACCOUNT_URL = 'https://svenlaa-lablogindeleteaccount.web.val.run';
-    const UPDATE_STATUS_URL = 'https://svenlaa-labloginupdatestatus.web.val.run';
-    const BAN_USER_URL = 'https://svenlaa-labloginbanuser.web.val.run';
-    const LOGIN_URL = 'https://svenlaa-lablogin.web.val.run';
 
     const refreshSign = document.querySelector('#refresh-sign');
     const loadingFeed = document.querySelector('#loading-feed');
@@ -95,7 +85,7 @@
         submitButton.textContent = 'Logging in...';
 
         loadingFeed.style.display = 'block';
-        const response = await fetch(LOGIN_URL, {
+        const response = await fetch(config.endpoints.login, {
             method: 'POST',
             body: JSON.stringify({ username, password }),
         });
@@ -113,56 +103,56 @@
             const namey = document.createElement('span');
             // <span class="name-${username}">${username}</span>!`;
             namey.textContent = username;
-            namey.className = `name-${username}@${INSTANCES[0].name}`;
+            namey.className = `name-${username}@${config.instance_name}`;
             h1.appendChild(namey);
             h1.append('!');
             let html = `
-        <label>Status</label>
-        <input type="text" id="status" name="status" autocomplete="off" />
-        <button id="update-status" class="primary">Update status</button>
-        <button id="update-gif">Update status with GIF</button>
-        <dialog id="gif-dialog">
-          <form method="dialog">
-            <header>
-              Pick a GIF
-              <button type="submit" value="" class="close-button" autofocus>Close</button>
-            </header>
-            <button class="gif" value="tode" title="Tode"><img src="https://todepond.com/image/tode.gif" alt="Tode" /></button>
-            <button class="gif" value="berd" title="Berd"><img src="https://todepond.com/image/berd.gif" alt="Berd" /></button>
-            <button class="gif" value="bot" title="Bot"><img src="https://todepond.com/image/bot.gif" alt="Bot" /></button>
-          </form>
-        </dialog>
-        <br /><br />
-        <span class="account-dashboard">
-          <span class="account-actions">
-            <button onclick="location.href = '${PAGE_PATH}?logout';" class="">Switch account</button>
-            <button id="delete-account" class="danger">Delete account</button>
-          </span>
-      `;
+            <label>Status</label>
+            <input type="text" id="status" name="status" autocomplete="off" />
+            <button id="update-status" class="primary">Update status</button>
+            <button id="update-gif">Update status with GIF</button>
+            <dialog id="gif-dialog">
+            <form method="dialog">
+                <header>
+                Pick a GIF
+                <button type="submit" value="" class="close-button" autofocus>Close</button>
+                </header>
+                <button class="gif" value="tode" title="Tode"><img src="https://todepond.com/image/tode.gif" alt="Tode" /></button>
+                <button class="gif" value="berd" title="Berd"><img src="https://todepond.com/image/berd.gif" alt="Berd" /></button>
+                <button class="gif" value="bot" title="Bot"><img src="https://todepond.com/image/bot.gif" alt="Bot" /></button>
+            </form>
+            </dialog>
+            <br /><br />
+            <span class="account-dashboard">
+            <span class="account-actions">
+                <button onclick="location.href = '${PAGE_PATH}?logout';" class="">Switch account</button>
+                <button id="delete-account" class="danger">Delete account</button>
+            </span>
+        `;
 
             const loginAutomatically = localStorage.getItem('labLoginAutoLogin') !== 'false';
             // if (username === "TodePond") {
             html += `
-        <span class="account-settings">
-            <label for="logged-in-toggle">
-              Login automatically
-              <input type="checkbox" id="logged-in-toggle" name="logged-in-toggle" ${
-                  loginAutomatically ? 'checked' : ''
-              } />
-            </label>
-          ${
-              username === ADMIN_NAME
-                  ? `
-                <label for="admin-toggle">
-                  Admin controls
-                  <input type="checkbox" id="admin-toggle" name="admin-toggle" />
+            <span class="account-settings">
+                <label for="logged-in-toggle">
+                Login automatically
+                <input type="checkbox" id="logged-in-toggle" name="logged-in-toggle" ${
+                    loginAutomatically ? 'checked' : ''
+                } />
                 </label>
-              `
-                  : ''
-          }
+            ${
+                username === config.instance_admin
+                    ? `
+                    <label for="admin-toggle">
+                    Admin controls
+                    <input type="checkbox" id="admin-toggle" name="admin-toggle" />
+                    </label>
+                `
+                    : ''
+            }
+            </span>
         </span>
-      </span>
-      `;
+        `;
             header.innerHTML = html;
             const loggedInToggle = document.querySelector('#logged-in-toggle');
             loggedInToggle.addEventListener('change', () => {
@@ -186,7 +176,7 @@
                     return;
                 }
                 loadingFeed.style.display = 'block';
-                const response = await fetch(DELETE_ACCOUNT_URL, {
+                const response = await fetch(config.endpoints.delete, {
                     method: 'POST',
                     body: JSON.stringify({ username, password }),
                 });
@@ -239,7 +229,7 @@
             return;
         }
 
-        const response = await fetch(UPDATE_STATUS_URL, {
+        const response = await fetch(config.endpoints.update, {
             method: 'POST',
             body: JSON.stringify({ status, username, password, gif }),
         });
@@ -281,21 +271,25 @@
         }
 
         const entries = [];
-        for (const instance of INSTANCES) {
-            const response = await fetch(instance.url);
-            const json = await response.json();
-            for (const user of json) {
-                const [status, username, timestamp, gif] = user;
+        const instances = await Promise.all(
+            config.instances.map(({ feed, name }) =>
+                fetch(feed)
+                    .then((res) => res.json())
+                    .then((feed) => ({ name, feed }))
+            )
+        );
+        for (let instance of instances) {
+            for (let post of instance.feed) {
+                const [status, username, timestamp, gif] = post;
+                const isGifValid = /^(tode|berd|bot)$/.test(gif);
                 if (new Date(timestamp) > new Date()) {
                     continue;
                 }
-
-                const isGifValid = /^(tode|berd|bot)$/.test(gif);
                 entries.push({
                     status,
                     username,
                     timestamp: new Date(timestamp),
-                    gif: isGifValid ? gif : undefined,
+                    gif: isGifValid ? post[3] : undefined,
                     instance: instance.name,
                 });
             }
@@ -414,7 +408,7 @@
 
             const span = status.querySelector('span');
             span.innerHTML = getHtmlFromMarkdown(entry.status);
-            if (entry.username === ADMIN_NAME) {
+            if (entry.username === config.instance_admin) {
                 // protip: log from individual user
                 // console.log(entry.status);
             }
@@ -512,7 +506,7 @@
 
     function maybeAddActions({ actionsElement, password, admin, entry }) {
         const enabled = localStorage.getItem('labLoginAdmin') === 'true';
-        if (admin === ADMIN_NAME && entry.instance === INSTANCES[0].name) {
+        if (admin === config.instance_admin && entry.instance === config.instance_name) {
             const kickNameButton = document.createElement('button');
             kickNameButton.classList.add('action-button');
             // banButton.className = "danger";
@@ -567,7 +561,7 @@
         }
 
         loadingFeed.style.display = 'block';
-        fetch(BAN_USER_URL, {
+        fetch(config.endpoints.ban, {
             method: 'POST',
             body: JSON.stringify({ username, password, admin, type, target }),
         })
@@ -586,8 +580,11 @@
         let html = '';
         let i = 0;
 
+        let blockquote = markdown.startsWith('>');
+        if (blockquote) html += '<blockquote>';
+
         if (markdown === 'please add gifs') {
-            return '<img class="nogif" src="gif.gif">';
+            return '<img class="nogif" src="gif.gif" alt="gifs are not supported">';
         }
 
         markdown = markdown.replaceAll('<', '').replaceAll('>', '').replaceAll('&', '');
@@ -729,6 +726,9 @@
         if (coding) {
             html += '</code>';
         }
+        if (blockquote) {
+            html += '</blockquote>';
+        }
 
         return html;
     }
@@ -764,7 +764,7 @@
     // loadingFeed.style.display = "none";
 
     const header = document.querySelector('header');
-    // if (usernameInput.value === ADMIN_NAME) {
+    // if (usernameInput.value === config.instance_admin) {
     // const spannn = document.createElement("span");
     // spannn.innerHTML = `
     //         <span style="float: right">
