@@ -4,6 +4,12 @@
         <link>https://svenlaa.com</link>
         <description>The site of Sven Lammertink</description>
         <item>
+            <title>Logout</title>
+            <link>https://svenlaa.com/playground/logout/</link>
+            <guid>https://svenlaa.com/playground/logout/</guid>
+            <pubDate>Mon, 11 Nov 2024 12:33:58 GMT</pubDate>
+        </item>
+        <item>
             <title>Loggo</title>
             <link>https://svenlaa.com/playground/loggo/</link>
             <guid>https://svenlaa.com/playground/loggo/</guid>

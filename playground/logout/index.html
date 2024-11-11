@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script
+    defer
+    data-domain="svenlaa.com"
+    data-api="https://who.svenlaa.workers.dev/my/event"
+    src="https://who.svenlaa.workers.dev/my/script.js"
+></script>
+<title>Logout</title>
+<meta property="og:image" content="https://svenlaa.com/og.jpg" />
+<link rel="stylesheet" href="/style.css" />
+
+<meta http-equiv="refresh" content="5;url=/playground/" />
+
+<h1>Logout</h1>
+<p>The new social platform, free from distracting content.</p>
+<p>Please leave <span id="counter"></span></p>
+
+<script>
+    let count = 5;
+    const counter = document.querySelector('#counter');
+    counter.textContent = 'in ' + count + ' second' + (count === 1 ? '' : 's');
+    setInterval(() => {
+        count--;
+        const text = 'in ' + count + ' second' + (count === 1 ? '' : 's');
+        document.querySelector('#counter').textContent = count === 0 ? '' : text;
+    }, 1000);
+</script>
