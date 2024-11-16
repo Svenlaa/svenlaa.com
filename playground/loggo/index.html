@@ -284,8 +284,9 @@
                 const [status, username, timestamp, gif] = post;
                 const isGifValid = /^(tode|berd|bot)$/.test(gif);
 
-                /* Account for 5 hour (18000000 ms) offset in Login API */
-                if (new Date(timestamp) - 18000000 > new Date()) {
+                /* Account for 5 hour offset in Login API */
+                const FIVE_HOURS = 18000000;
+                if (new Date(timestamp) - FIVE_HOURS > new Date()) {
                     continue;
                 }
                 entries.push({
