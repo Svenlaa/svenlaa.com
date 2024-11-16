@@ -285,7 +285,7 @@
                 const isGifValid = /^(tode|berd|bot)$/.test(gif);
 
                 /* Account for 5 hour (18000000 ms) offset in Login API */
-                if (new Date(post.date) - 18000000 > new Date()) {
+                if (new Date(timestamp) - 18000000 > new Date()) {
                     continue;
                 }
                 entries.push({
