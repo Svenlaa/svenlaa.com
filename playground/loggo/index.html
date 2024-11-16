@@ -279,10 +279,11 @@
             )
         );
         for (let instance of instances) {
+            if (!Array.isArray(instance?.feed)) continue
             for (let post of instance.feed) {
                 const [status, username, timestamp, gif] = post;
                 const isGifValid = /^(tode|berd|bot)$/.test(gif);
-                if (new Date(timestamp) > new Date()) {
+                if (new Date(new Date(post.date - 18000000)) > new Date()) {
                     continue;
                 }
                 entries.push({
