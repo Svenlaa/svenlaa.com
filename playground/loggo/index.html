@@ -279,10 +279,14 @@
             )
         );
         for (let instance of instances) {
+            if (!Array.isArray(instance?.feed)) continue
             for (let post of instance.feed) {
                 const [status, username, timestamp, gif] = post;
                 const isGifValid = /^(tode|berd|bot)$/.test(gif);
-                if (new Date(timestamp) > new Date()) {
+
+                /* Account for 5 hour offset in Login API */
+                const FIVE_HOURS = 18000000;
+                if (new Date(timestamp) - FIVE_HOURS > new Date()) {
                     continue;
                 }
                 entries.push({
