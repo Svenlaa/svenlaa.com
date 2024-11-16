@@ -283,7 +283,9 @@
             for (let post of instance.feed) {
                 const [status, username, timestamp, gif] = post;
                 const isGifValid = /^(tode|berd|bot)$/.test(gif);
-                if (new Date(new Date(post.date - 18000000)) > new Date()) {
+
+                /* Account for 5 hour (18000000 ms) offset in Login API */
+                if (new Date(post.date) - 18000000 > new Date()) {
                     continue;
                 }
                 entries.push({
