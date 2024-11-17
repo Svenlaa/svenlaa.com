@@ -284,8 +284,11 @@
                 const [status, username, timestamp, gif] = post;
                 const isGifValid = /^(tode|berd|bot)$/.test(gif);
 
-                const ONE_HOUR = 60000
-                const TIMEZONE_OFFSET = new Date().getTimezoneOffset() * ONE_HOUR; /* new Date(timestamp) is based on device timezone. */
+                const ONE_HOUR = 3600000
+                const TIMEZONE_OFFSET = (new Date().getTimezoneOffset() / 60 /* Convert the timezone offset to hours */) * ONE_HOUR;
+                    
+
+                 /* new Date(timestamp) is based on device timezone. */
                 const isFromFuture = new Date(timestamp) - TIMEZONE_OFFSET > new Date();
                 if (isFromFuture) {
                     continue;
