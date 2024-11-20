@@ -44,7 +44,7 @@ export const config = {
         },
         {
             name: 'rossilaz.xyz',
-            feed: 'https://mittzy-loginredux_getusers.web.val.run',
+            feed: 'https://mittzy-lablogingetusers.web.val.run',
         },
         {
             _comment: 'client on github pages @ https://cute-catgirl.github.io/login/',
