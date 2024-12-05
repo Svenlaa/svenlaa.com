@@ -100,14 +100,14 @@ input[type='checkbox'] {
 .at {
     font-weight: bold;
     text-decoration: none;
-    color: white;
+    color: var(--stone-950);
 }
 
 .at:hover {
     background-image: none;
-    background-color: white;
-    color: var(--shade-3);
-    outline-color: white;
+    background-color: var(--stone-950);
+    color: var(--stone-050);
+    outline-color: var(--stone-950);
     background-clip: unset;
     -webkit-text-fill-color: unset;
 }
@@ -117,7 +117,7 @@ input[type='checkbox'] {
 }
 
 #gif-dialog {
-    background-color: var(--shade-4);
+    background-color: var(--stone-300);
     color: white;
 }
 
