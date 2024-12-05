@@ -101,6 +101,7 @@ input[type='checkbox'] {
     font-weight: bold;
     text-decoration: none;
     color: var(--stone-950);
+    font-family: var(--font-mono);
 }
 
 .at:hover {
