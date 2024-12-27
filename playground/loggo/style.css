@@ -472,7 +472,7 @@ input[type='checkbox'] {
 /* elouan */
 /* ======= */
 .name-elouan\@todepond\.com::after {
-    background: linear-gradient(150deg, #1184FE, #1367bf);
+    background: linear-gradient(150deg, #1184fe, #1367bf);
     content: '😎🦋 BLUESKY';
     border: 1px solid hsl(42.2, 100%, 63.7%);
     color: hsl(42.2, 100%, 63.7%);
@@ -485,6 +485,9 @@ input[type='checkbox'] {
 }
 .name-elouan\@todepond\.com {
     color: transparent;
-    background: linear-gradient(150deg, #7DB84F, #545454);
+    background: linear-gradient(150deg, #7db84f, #545454);
     background-clip: text;
+}
+.at-elouan\@todepond\.com::after {
+    all: unset;
 }
