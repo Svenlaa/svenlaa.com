@@ -4,7 +4,7 @@ this is the source code for [Loggo](https://svenlaa.com/playground/loggo/)
 
 -   client side stuff in `index.html`
 -   custom styles in `style.css`
--   server side stuff on my [val.town](https://www.val.town/u/svenlaa) (check `index.html` to find names of the different vals)
+-   server side stuff on [svenlaa/api.svenlaa.com](https://github.com/svenlaa/api.svenlaa.com) (check `logiverse.js` to find names of the different endpoints)
 
 ## Custom styles
 
