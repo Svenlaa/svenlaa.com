@@ -5,10 +5,10 @@ export const config = {
     instance_name: 'svenlaa.com',
     instance_admin: 'Svenlaa',
     endpoints: {
-        update: 'https://svenlaa-labloginupdatestatus.web.val.run',
-        login: 'https://svenlaa-lablogin.web.val.run',
-        delete: 'https://svenlaa-lablogindeleteaccount.web.val.run',
-        ban: 'https://svenlaa-labloginbanuser.web.val.run',
+        update: 'https://api.svenlaa.com/logiverse/update',
+        login: 'https://api.svenlaa.com/logiverse/login',
+        delete: 'https://api.svenlaa.com/logiverse/delete',
+        ban: 'https://api.svenlaa.com/logiverse/ban',
     },
     instances: [
         {
@@ -31,7 +31,7 @@ export const config = {
         },
         {
             name: 'svenlaa.com',
-            feed: 'https://svenlaa-lablogingetusers.web.val.run',
+            feed: 'https://api.svenlaa.com/logiverse/logs',
             // update: "https://svenlaa-labloginupdatestatus.web.val.run",
             // login: "https://svenlaa-lablogin.web.val.run",
             // delete: "https://svenlaa-lablogindeleteaccount.web.val.run",
