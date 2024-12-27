@@ -10,7 +10,6 @@
 <meta property="og:image" content="https://svenlaa.com/og.jpg" />
 
 <link rel="stylesheet" href="/style.css" />
-<!-- <link rel="stylesheet" href="https://todepond.com/style.css" /> -->
 <link rel="stylesheet" href="./style.css" />
 
 <h1>Loggo</h1>
@@ -284,11 +283,11 @@
                 const [status, username, timestamp, gif] = post;
                 const isGifValid = /^(tode|berd|bot)$/.test(gif);
 
-                const ONE_HOUR = 3600000
-                const TIMEZONE_OFFSET = (new Date().getTimezoneOffset() / 60 /* Convert the timezone offset to hours */) * ONE_HOUR;
-                    
+                const ONE_HOUR = 3600000;
+                const TIMEZONE_OFFSET =
+                    (new Date().getTimezoneOffset() / 60) /* Convert the timezone offset to hours */ * ONE_HOUR;
 
-                 /* new Date(timestamp) is based on device timezone. */
+                /* new Date(timestamp) is based on device timezone. */
                 const isFromFuture = new Date(timestamp) - TIMEZONE_OFFSET > new Date();
                 if (isFromFuture) {
                     continue;
@@ -795,7 +794,8 @@
 
     function addUserActions({ userActionsElement, username, loggedInUsername, loggedInPassword }) {
         const replyButton = document.createElement('button');
-        replyButton.textContent = 'Reply';
+        replyButton.textContent = '💬';
+        replyButton.ariaLabel = 'Reply';
         replyButton.classList.add('secondary');
         replyButton.classList.add('action-button');
         replyButton.addEventListener('click', () => {
@@ -806,7 +806,8 @@
         userActionsElement.appendChild(replyButton);
 
         const likeButton = document.createElement('button');
-        likeButton.textContent = 'Like';
+        likeButton.textContent = '👍🏻';
+        likeButton.ariaLabel = 'Like';
         likeButton.classList.add('primary');
         likeButton.classList.add('action-button');
         likeButton.addEventListener('click', () => handleLike({ username, loggedInUsername, loggedInPassword }));
