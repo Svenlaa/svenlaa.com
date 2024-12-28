@@ -94,7 +94,13 @@ input[type='checkbox'] {
 }
 
 .action-button {
-    font-size: 0.8em;
+    background-color: var(--stone-300);
+    text-shadow: var(--stone-600) 0 0 0.1em;
+    text-align: center;
+    border: 1px solid var(--stone-200);
+    border-radius: 0.2em;
+    margin: 0 0.2em;
+    font-size: 1em;
 }
 
 .at {
