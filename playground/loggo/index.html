@@ -106,10 +106,13 @@
             h1.appendChild(namey);
             h1.append('!');
             let html = `
-            <label>Status</label>
-            <input type="text" id="status" name="status" autocomplete="off" />
-            <button id="update-status" class="primary">Update status</button>
+            <label for="status"><b>Status:</b></label>
+            <br>
+            <textarea id="status" name="status" rows="4" cols="50"></textarea>
+            <br>
+            <button class="update-button" id="update-status" class="primary">Update status</button>
             <button id="update-gif">Update status with GIF</button>
+            <br> <br>
             <dialog id="gif-dialog">
             <form method="dialog">
                 <header>
