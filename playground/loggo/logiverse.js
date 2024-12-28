@@ -51,5 +51,9 @@ export const config = {
             name: 'maemoon.me',
             feed: 'https://maemoon-lablogingetusers.web.val.run',
         },
+        {
+            name: 'logivert.pages.dev',
+            feed: 'https://api-logivert.elouan-grimm-5a5.workers.dev/logiverse/logs',
+        },
     ],
 };
