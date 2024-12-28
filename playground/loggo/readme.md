@@ -10,4 +10,4 @@ this is the source code for [Loggo](https://svenlaa.com/playground/loggo/)
 
 Want to add some custom styles to your profile???
 
-Fork this repo, and submit a PR like [this one](https://github.com/TodePond/TodePondDotCom/pull/12)
+Fork this repo, add your style to `user-styles.css`, then submit a PR like [this one](https://github.com/TodePond/TodePondDotCom/pull/12)
