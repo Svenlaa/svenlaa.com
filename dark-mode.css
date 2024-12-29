@@ -1,0 +1,34 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        --stone-050: #0c0a09;
+        --stone-100: #1c1917;
+        --stone-200: #292524;
+        --stone-300: #44403c;
+        --stone-400: #57534e;
+        --stone-500: #78716c;
+        --stone-600: #a8a29e;
+        --stone-700: #d6d3d1;
+        --stone-800: #e7e5e4;
+        --stone-900: #f5f5f4;
+        --stone-950: #fafaf9;
+
+        /* shade 400 */
+        --red: #f87171;
+        --orange: #fbbf24;
+        --amber: #f59e0b;
+        --yellow: #d97706;
+        --lime: #84cc16;
+        --green: #22c55e;
+        --emerald: #10b981;
+        --teal: #14b8a6;
+        --cyan: #06b6d4;
+        --sky: #0ea5e9;
+        --blue: #3b82f6;
+        --indigo: #6366f1;
+        --violet: #8b5cf6;
+        --purple: #a855f7;
+        --fuchsia: #d946ef;
+        --pink: #ec4899;
+        --rose: #f43f5e;
+    }
+}
