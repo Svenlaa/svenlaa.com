@@ -51,5 +51,9 @@ export const config = {
             name: 'maemoon.me',
             feed: 'https://maemoon-lablogingetusers.web.val.run',
         },
+        {
+            name: 'blag.slonk.ing',
+            feed: 'https://blag.slonk.ing/posts/blogin?action=posts',
+        },
     ],
 };
