@@ -265,11 +265,18 @@
 
         const entries = [];
         const instances = await Promise.all(
-            config.instances.map(({ feed, name }) =>
-                fetch(feed)
+            config.instances.map(({ feed, name }) => {
+                const controller = new AbortController();
+                const timeout = setTimeout(() => controller.abort(), 5000);
+
+                return fetch(feed, { signal: controller.signal })
                     .then((res) => res.json())
-                    .then((feed) => ({ name, feed }))
-            )
+                    .then((feed) => {
+                        clearTimeout(timeout);
+                        return { name, feed };
+                    })
+                    .catch(() => ({ name, feed: [] })); // Return empty feed on timeout/error
+            })
         );
         for (let instance of instances) {
             if (!Array.isArray(instance?.feed)) continue;
