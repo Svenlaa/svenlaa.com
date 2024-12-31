@@ -430,6 +430,7 @@
             addUserActions({
                 userActionsElement: status.querySelector('.user-actions'),
                 username: entry.username,
+                instance: entry.instance,
                 loggedInUsername: usernameInput.value,
                 loggedInPassword: passwordInput.value,
             });
@@ -497,6 +498,7 @@
             addUserActions({
                 userActionsElement: userActions,
                 username: entry.username,
+                instance: entry.instance,
                 loggedInUsername: usernameInput.value,
                 loggedInPassword: passwordInput.value,
             });
@@ -794,7 +796,7 @@
     // });
     // }
 
-    function addUserActions({ userActionsElement, username, loggedInUsername, loggedInPassword }) {
+    function addUserActions({ userActionsElement, username, loggedInUsername, loggedInPassword, instance }) {
         const replyButton = document.createElement('button');
         replyButton.textContent = '💬';
         replyButton.ariaLabel = 'Reply';
@@ -802,7 +804,7 @@
         replyButton.classList.add('action-button');
         replyButton.addEventListener('click', () => {
             const statusInput = document.querySelector('#status');
-            statusInput.value = `@${username} `;
+            statusInput.value = `@${username}@${instance} `;
             statusInput.focus();
         });
         userActionsElement.appendChild(replyButton);
