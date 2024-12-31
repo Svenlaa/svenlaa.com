@@ -751,7 +751,7 @@
     } catch (e) {
         parsedLocalStatuses = [];
     }
-    nameSet = new Set(parsedLocalStatuses.map((v) => v.username + '' + v.instance));
+    nameSet = new Set(parsedLocalStatuses.map((v) => v.username + '@' + v.instance));
     renderUserStatuses(parsedLocalStatuses);
 
     const urlQuery = new URLSearchParams(window.location.search);
