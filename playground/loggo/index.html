@@ -266,7 +266,7 @@
         const entries = [];
         const instances = await Promise.all(
             config.instances.map(({ feed, name }) =>
-                fetch(feed)
+                fetch(feed, { signal: AbortSignal.timeout(5000) })
                     .then((res) => res.json())
                     .then((feed) => ({ name, feed }))
             )
