@@ -16,20 +16,34 @@ html {
 
 .account-dashboard {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: flex-start;
+    /* justify-content: space-between; */
+    /* align-items: flex-end; */
     /* align-items: center; */
-    flex-wrap: wrap;
-    gap: 5px 10px;
+    /* flex-wrap: wrap; */
+    /* gap: 5px 10px; */
+}
+
+.account-burger {
 }
 
 .account-settings {
     display: flex;
     flex-direction: column;
     /* float: right; */
-    align-items: flex-end;
+    align-items: flex-start;
     margin-top: 10px;
     flex-shrink: 0;
+}
+
+.account-actions {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* float: right; */
+    /* align-items: flex-end; */
+    margin-top: 10px;
+    /* flex-shrink: 0; */
 }
 
 .account-settings > label {
