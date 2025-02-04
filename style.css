@@ -35,6 +35,13 @@
     --font-mono: 'JetBrains Mono', 'SF Mono', 'Roboto Mono', 'Cascadia Code', monospace;
 }
 
+textarea,
+input {
+    font: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+}
+
 body {
     font-family: Inter, sans-serif;
     max-width: 750px;
