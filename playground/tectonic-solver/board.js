@@ -121,9 +121,9 @@ export const drawBoard = (cells, size) => {
     }
 };
 
-export const recalculateBoard = (currentBoard) => {
+export const recalculateBoard = (board) => {
     const blocks = Object.values(
-        currentBoard.cells.reduce((acc, cell, i) => {
+        board.cells.reduce((acc, cell, i) => {
             const blockIndex = cell.block;
             if (!acc[blockIndex]) {
                 acc[blockIndex] = {
@@ -146,6 +146,15 @@ export const recalculateBoard = (currentBoard) => {
         }, {})
     );
 
-    currentBoard.blocks = blocks;
-    return currentBoard;
+    board.blocks = blocks;
+    return board;
+};
+
+export const updateCell = (cell_id, value, board) => {
+    if (board.cells[cell_id].initialValue) return console.error(`Cannot update initial value for cell ${cell_id}`);
+
+    board.cells[cell_id].value = value;
+    drawBoard(board.cells, board.size);
+    recalculateBoard(board);
+    return;
 };
