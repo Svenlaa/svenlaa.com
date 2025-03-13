@@ -1,17 +1,17 @@
 .row {
     display: flex;
-    justify-content: start;
-    width: fit-content;
+    justify-content: center;
 }
 
 .cell {
-    width: 50px;
-    height: 50px;
+    --cell-size: min(4rem, calc((min(100vmin, 800px) - 1em) / 8));
+    width: var(--cell-size);
+    height: var(--cell-size);
     display: inline-block;
     border: 1px solid var(--stone-950);
     text-align: center;
-    line-height: 50px;
-    font-size: 24px;
+    line-height: var(--cell-size);
+    font-size: calc(var(--cell-size) * 0.8);
     background-color: var(--stone-050);
 
     &.initial-value {
