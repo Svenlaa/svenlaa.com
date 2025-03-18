@@ -336,7 +336,7 @@ input[type='checkbox'] {
 /* PodeTond 💚 */
 /* =========== */
 .name-PodeTond.💚\@todepond\.com {
-    linear-gradient( to right, #eaacb8, #7acbf5 9ch, var(--green) 9ch );
+    background: linear-gradient( to right, #eaacb8, #7acbf5 9ch, var(--green) 9ch );
     -webkit-text-fill-color: transparent;
     background-clip: text;
     display: inline-block; /* so it doesnt cut the heart */
