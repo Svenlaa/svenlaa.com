@@ -94,6 +94,22 @@ input[type='checkbox'] {
     outline: 2px solid var(--best-colour);
 }
 
+.status strong::before {
+    content: '✔️';
+    padding: 0.15em;
+    font-size: 0.7em;
+    /* make the text white */
+    color: transparent;
+    text-shadow: 0 0 0 white;
+
+    margin-right: 0.2em;
+
+    width: 1em;
+    height: 1em;
+    border-radius: 100%;
+    background-color: var(--blue);
+}
+
 .post-title {
     all: unset;
 }
@@ -336,7 +352,7 @@ input[type='checkbox'] {
 /* PodeTond 💚 */
 /* =========== */
 .name-PodeTond.💚\@todepond\.com {
-    background: linear-gradient( to right, #eaacb8, #7acbf5 9ch, var(--green) 9ch );
+    background: linear-gradient(to right, #eaacb8, #7acbf5 9ch, var(--green) 9ch);
     -webkit-text-fill-color: transparent;
     background-clip: text;
     display: inline-block; /* so it doesnt cut the heart */
