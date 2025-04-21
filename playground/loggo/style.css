@@ -94,7 +94,7 @@ input[type='checkbox'] {
     outline: 2px solid var(--best-colour);
 }
 
-.status strong::before {
+.status .post-title::before {
     content: '✔️';
     padding: 0.15em;
     font-size: 0.7em;
@@ -102,7 +102,7 @@ input[type='checkbox'] {
     color: transparent;
     text-shadow: 0 0 0 white;
 
-    margin-right: 0.2em;
+    margin-right: 0.25em;
 
     width: 1em;
     height: 1em;
