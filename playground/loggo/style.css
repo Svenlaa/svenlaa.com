@@ -51,11 +51,11 @@ html {
     align-items: center;
     gap: 4px;
     flex-shrink: 0;
-    /* border: 1px solid var(--best-colour); */
+    /* border: 1px solid var(--mauve); */
     cursor: pointer;
     /* padding: 0px 0px 0px 5px; */
-    /* color: var(--best-colour); */
-    /* accent-color: var(--best-colour); */
+    /* color: var(--mauve); */
+    /* accent-color: var(--mauve); */
 }
 
 .account-settings > label > input[type='checkbox'] {
@@ -77,7 +77,7 @@ input[type='checkbox'] {
 }
 
 #refresh-sign {
-    color: var(--best-colour);
+    color: var(--mauve);
     cursor: pointer;
     user-select: none;
     background: none;
@@ -89,18 +89,17 @@ input[type='checkbox'] {
 }
 
 #refresh-sign:hover {
-    background-color: var(--best-colour);
-    color: var(--shade-3);
-    outline: 2px solid var(--best-colour);
+    background-color: var(--mauve);
+    color: var(--base);
+    outline: 2px solid var(--mauve);
 }
 
 .status .post-title::before {
     content: '✔️';
     padding: 0.15em;
     font-size: 0.7em;
-    /* make the text white */
     color: transparent;
-    text-shadow: 0 0 0 white;
+    text-shadow: 0 0 0 var(--base);
 
     margin-right: 0.25em;
 
@@ -124,10 +123,10 @@ input[type='checkbox'] {
 }
 
 .action-button {
-    background-color: var(--stone-300);
-    text-shadow: var(--stone-600) 0 0 0.1em;
+    background-color: var(--surface-0);
+    text-shadow: var(--surface-2) 0 0 0.1em;
     text-align: center;
-    border: 1px solid var(--stone-200);
+    border: 1px solid var(--surcace-1);
     border-radius: 0.2em;
     margin: 0 0.2em;
     font-size: 1em;
@@ -136,15 +135,15 @@ input[type='checkbox'] {
 .at {
     font-weight: bold;
     text-decoration: none;
-    color: var(--stone-950);
+    color: var(--text);
     font-family: var(--font-mono);
 }
 
 .at:hover {
     background-image: none;
-    background-color: var(--stone-950);
-    color: var(--stone-050);
-    outline-color: var(--stone-950);
+    background-color: var(--text);
+    color: var(--base);
+    outline-color: var(--text);
     background-clip: unset;
     -webkit-text-fill-color: unset;
 }
@@ -154,7 +153,7 @@ input[type='checkbox'] {
 }
 
 #gif-dialog {
-    background-color: var(--stone-300);
+    background-color: var(--overlay-1);
     color: white;
 }
 
