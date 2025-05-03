@@ -104,7 +104,7 @@ a.big {
     }
 }
 
-a {
+a:not(.basic) {
     --color: var(--blue);
     color: var(--color);
 
