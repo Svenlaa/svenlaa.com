@@ -68,7 +68,10 @@ const app = async () => {
                 <h3>${video.title}</h3>
                 <p>
                     <span>${video.talent.name}</span>
-                    <span>${new Date(video.datetime + ' GMT+0900').toLocaleString('nl-NL', {})}</span>
+                    <span>${new Date(video.datetime + ' GMT+0900').toLocaleString('en-GB', {
+                        dateStyle: 'long',
+                        timeStyle: 'short',
+                    })}</span>
                 </p>
             </a>
         `;
