@@ -1,4 +1,30 @@
 :root {
+    /* Keep around previously used tailwind-based colors for backwards compatibility sake */
+
+    /* https://tailwindcss.com/docs/customizing-colors */
+    --stone-050: #fafaf9;
+    --stone-100: #f5f5f4;
+    --stone-200: #e7e5e4;
+    --stone-300: #d6d3d1;
+    --stone-400: #a8a29e;
+    --stone-500: #78716c;
+    --stone-600: #57534e;
+    --stone-700: #44403c;
+    --stone-800: #292524;
+    --stone-900: #1c1917;
+    --stone-950: #0c0a09;
+    /* shade 500 */
+    --orange: #f97316;
+    --amber: #f59e0b;
+    --lime: #84cc16;
+    --emerald: #10b981;
+    --cyan: #06b6d4;
+    --indigo: #6366f1;
+    --violet: #8b5cf6;
+    --purple: #a855f7;
+    --fuchsia: #d946ef;
+    --rose: #f43f5e;
+
     /* https://catppuccin.com/palette/#flavor-latte */
 
     --rosewater: #dc8a78;
