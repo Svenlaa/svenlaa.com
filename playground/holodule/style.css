@@ -1,17 +1,17 @@
+body {
+    max-width: 950px;
+}
 #feed {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
     flex-wrap: wrap;
-    gap: 16px;
-    padding: 16px;
-    border-radius: 8px;
+    gap: 0.5em;
     margin: auto;
 }
 .video {
     background-color: var(--surface-0);
-    border-radius: 8px;
+    border-radius: 0.5em;
     overflow: hidden;
-    width: calc(50% - 16px);
-    margin-bottom: 16px;
     transition: transform 0.2s;
     position: relative;
 }
@@ -31,13 +31,12 @@
 }
 .video .live {
     position: absolute;
-    top: 8px;
-    left: 8px;
+    top: 0.5em;
+    left: 0.5em;
     background-color: var(--red);
     color: var(--base);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.8em;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
 }
 .video img {
     width: 100%;
@@ -45,24 +44,14 @@
     aspect-ratio: 16/9;
 }
 .video h3 {
-    font-size: 1.2em;
-    margin: 8px;
+    font-size: 1em;
+    margin: 0.5em;
 }
 .video p {
     font-size: 1em;
-    margin: 8px;
+    margin: 0.5em;
     color: var(--text);
     display: inline-flex;
     justify-content: space-between;
-    width: calc(100% - 16px);
-}
-@media (max-width: 768px) {
-    .video {
-        width: calc(50% - 16px);
-    }
-}
-@media (max-width: 480px) {
-    .video {
-        width: calc(100% - 16px);
-    }
+    width: calc(100% - 1em);
 }
