@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Bloggo</title>
+<meta name="fediverse:creator" content="@Svenlaa@mas.to" />
+<meta property="og:image" content="https://svenlaa.com/og.jpg" />
+<link rel="stylesheet" href="/style.css" />
+<link rel="stylesheet" href="./style.css" />
+
+<h1>Time Notation</h1>
+
+<p id="requirement-js" style="color: var(--red)">
+    This post includes dynamic parts that require javascript. javascript seems to be disabled on your browser
+</p>
+<script>
+    document.querySelector('#requirement-js').style.display = 'none';
+</script>
+
+<p>The time is currently <b id="time-local">14:19</b>, which can also be written as <b id="time-local-ao">A439</b>.</p>
+<p>
+    Let's assume you've been awake since
+    <input type="time" value="07:00" name="waketime" id="input_waketime" aria-label="Wake Time" />
+</p>
+<p>
+    That means you've been awake for <b><span id="awake-minutes">439</span> minutes</b>
+</p>
+<p>
+    You only reach a 1000 minutes after being awake for 16 hours and 40 minutes, leaving 7 hours and 20 minutes for
+    sleep. That means most people are awake for around 1000 minutes a day.
+</p>
+<p>
+    In other words, the amount of minutes you've been awake is a good estimate of how much percent (promille) of the day
+    you've spent.
+</p>
+<p>Time is the most important resource we have, and it's therefore useful to be aware of how much we're spending.</p>
+
+<h2>Dividing time</h2>
+<p>
+    Time is not divided using maths and units and calculations. The divisions in time are mostly ways of combining time
+    with language. Because of this, there are lots and lots and lots of systems, with subtle differences and mostly used
+    interchangably. The world is complicated.
+</p>
+<p>There are four major ways of defining time:</p>
+<ul>
+    <li>Based on the duration it takes for earth to rotate on it's axis - day</li>
+    <li>
+        Based on the duration the sun is visible from earth - daytime (approximately half a day, varies throughout year)
+    </li>
+    <li>Based on the duration it takes for moon to rotate around earth - month</li>
+    <li>Based on the duration it takes for earth to rotate around sun - year</li>
+    <li>Based on the duration of oscillations of cesium atom microwave radiation - second, building block</li>
+</ul>
+
+<p>Here are some of the units using the building block defined way</p>
+<ul>
+    <li>
+        <strong>second</strong>,
+        <a href="https://www.nist.gov/si-redefinition/second-introduction">according to NIST</a>, is currently defined
+        using cesium atoms, which absorb and emit microwave radiation with a specific frequency. Atomic clocks count
+        9,192,631,770 of those microwave oscillations, and we call the elapsed time interval a second.
+    </li>
+    <li><strong>minute</strong> consists of <strong>60 second</strong></li>
+    <li><strong>hour</strong> consists of <strong>60 minute</strong> (3600 second)</li>
+    <li><strong>day</strong> consists of <strong>24 hour</strong> (1440 minute, 86400 second)</li>
+    <li><strong>week</strong> consists of <strong>7 day</strong> (168 hour, 10080 minute, 604800 second)</li>
+</ul>
+
+<h2>A different system</h2>
+
+<p>Let's define a system that's based on my schedule.</p>
+<p>I live in the industrialized world. I have an office job with a consistent schedule. I value routine.</p>
+<p>My routine revolves around the day. It revolves around the time I am awake and the time I am asleep.</p>
+<p>
+    It'd be nice if the new system can be integrated with the current one. It should be relatively easy to switch
+    between the two. One should be able to mentally convert the systems with less than a month of practice.
+</p>
+<p>
+    One is awake for around 1000 minutes, which is a nice round number that integrates with the current system. The
+    existing units can be integrated.
+</p>
+<p>
+    The epoch of the day is oddly defined. It's based on "midnight" which is around an eigth into my sleep. It's based
+    on midday, the time when the sun is the highest in the sky. But that definition got muddled over the last few
+    centuries. It's at the highest point in the sky 1h30 minutes AFTER noon. The epoch's off by ONE AND A HALF HOURS.
+    Partially to make bisnis easier. Partially for a more united Europe. Partially because of historical energy needs.
+    Partially because people think "summer time" is nice because it's WARMER because the name has SUMMER IN IT. (i am
+    getting annoyed)
+</p>
+<p>
+    Where was I? Oh I see, we can redifine the epoch. It's arbitrarly defined, with a definition that has become less
+    useful over time.
+</p>
+<p>
+    Let's define the epoch at when I wake up. The day starts when I start. That has the nice bonus of time hitting 1000
+    minutes when I go to bed. I can do that because it's a system defined for me and me alone.
+</p>
+<p>To make that a possibility, one should primarily use the minute unit. We'll ditch the hour to accomplish this.</p>
+<p>
+    Now, what about nighttime? We could either keep counting from 1000 to 1439, or we could switch to an AM/PM like
+    system. Use vowels because they're distinct. A for Awake, O for overnight.
+</p>
+<p>
+    Now, we could make the O-range from 000 to 439 or from 000 to 999, changing the definition of a minute. We'll stick
+    with the minute-defined time. We wouldn't want to change our fundamental unit. Keeping the minute inline also allows
+    us to convert. Although I wish you the best of luck doing that a O140 (3AM)
+</p>
+
+<h2>A/O Time Notation</h2>
+<p>
+    A/O starts the time when I wake up, 7AM. It is A000 (Oh Zero). You usually don't have to pronounce A, just like you
+    don't say AM. It's obvious from context. Notation should always include A/O. 10 minutes later I'm up at A010 (Oh
+    Ten). At A330 (Three Thirty) (12:30 PM) it's time for lunch. It's time to go to bed at A950 (10:50PM). I sleep well
+    and don't see the O-range.
+</p>
+<p>
+    We have a system that keeps track of your percentage (promille) of your waking duration spent. It starts when you
+    wake up and stops when you go to bed. Time keeps going on while you're asleep, but you don't notice. Sleep is a time
+    machine to breakfast.
+</p>
+<img style="width: clamp(100px, 100%, 400px)" src="./sleep_is_a_time_machine_to_breakfast.jpg" alt="A meme with a frog
+and breakfast items, text reads: 'Sleep is just a time machine to breakfast, my dudes.'" / >
+
+<hr />
+<a href="/bloggo">Back to the Bloggo</a>
+
+<script type="module" src="./script.js"></script>
