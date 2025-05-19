@@ -15,6 +15,7 @@
     Date String
     <input type="text" name="date" />
 </label>
+<button id="set-now" style="display: block; margin: 1em 0">Set to Now</button>
 
 <span id="output" style="margin-right: 0.2em">Please enter a valid date</span
 ><button type="button" onclick="copyText()" id="copy">Copy</button>
@@ -22,19 +23,27 @@
 <script>
     const outputElement = document.querySelector('#output');
     const inputElement = document.querySelector('input[name=date]');
+    const setNowButton = document.querySelector('button#set-now');
 
     function copyText() {
         const text = outputElement.textContent;
         navigator.clipboard.writeText(text);
     }
 
+    const setDate = (date) => {
+        outputElement.textContent = isNaN(date) ? 'Please enter a valid date' : date.toUTCString();
+    };
+
     inputElement.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') return copyText();
     });
 
+    setNowButton.addEventListener('click', (e) => {
+        setDate(new Date());
+    });
+
     inputElement.addEventListener('input', (e) => {
         const date = new Date(e.target.value);
-
-        outputElement.textContent = isNaN(date) ? 'Please enter a valid date' : date.toUTCString();
+        setDate(date);
     });
 </script>
