@@ -128,3 +128,7 @@ label {
         display: block;
     }
 }
+
+img {
+    max-width: 100%;
+}
