@@ -5,7 +5,7 @@ const app = () => {
     const aoUnadjusted = currentTimeInMinutes - 60 * 7;
     const aoTime = aoUnadjusted < 0 ? aoUnadjusted + 24 * 60 : aoUnadjusted;
 
-    const aoStringTime = aoTime > 999 ? 'O' + aoTime - 1000 : 'A' + aoTime;
+    const aoStringTime = aoTime > 999 ? 'O' + (aoTime - 1000) : 'A' + aoTime;
 
     const timeFormatter = new Intl.DateTimeFormat('nl-NL', {
         timeStyle: 'short',
