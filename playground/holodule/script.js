@@ -38,7 +38,7 @@ const app = async () => {
             // date is in JST, so we need to convert it to UTC
             const date = new Date(video.datetime + ' GMT+0900');
             const FIVE_MINUTES = 1000 * 60 * 5;
-            return video.isLive || date.getTime() - FIVE_MINUTES > now.getTime();
+            return video.isLive || date.getTime() > now.getTime() - FIVE_MINUTES;
         })
         .map((video) => ({
             title: video.title,
