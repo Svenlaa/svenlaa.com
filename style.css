@@ -2,28 +2,28 @@
     /* Keep around previously used tailwind-based colors for backwards compatibility sake */
 
     /* https://tailwindcss.com/docs/customizing-colors */
-    --stone-050: #fafaf9;
-    --stone-100: #f5f5f4;
-    --stone-200: #e7e5e4;
-    --stone-300: #d6d3d1;
-    --stone-400: #a8a29e;
-    --stone-500: #78716c;
-    --stone-600: #57534e;
-    --stone-700: #44403c;
-    --stone-800: #292524;
-    --stone-900: #1c1917;
-    --stone-950: #0c0a09;
+    --stone-050: oklch(98.5% 0.001 106.423);
+    --stone-100: oklch(97% 0.001 106.424);
+    --stone-200: oklch(92.3% 0.003 48.717);
+    --stone-300: oklch(86.9% 0.005 56.366);
+    --stone-400: oklch(70.9% 0.01 56.259);
+    --stone-500: oklch(55.3% 0.013 58.071);
+    --stone-600: oklch(44.4% 0.011 73.639);
+    --stone-700: oklch(26.8% 0.007 34.298);
+    --stone-800: oklch(26.8% 0.007 34.298);
+    --stone-900: oklch(21.6% 0.006 56.043);
+    --stone-950: oklch(21.6% 0.006 56.043);
     /* shade 500 */
-    --orange: #f97316;
-    --amber: #f59e0b;
-    --lime: #84cc16;
-    --emerald: #10b981;
-    --cyan: #06b6d4;
-    --indigo: #6366f1;
-    --violet: #8b5cf6;
-    --purple: #a855f7;
-    --fuchsia: #d946ef;
-    --rose: #f43f5e;
+    --orange: oklch(70.5% 0.213 47.604);
+    --amber: oklch(76.9% 0.188 70.08);
+    --lime: oklch(76.8% 0.233 130.85);
+    --emerald: oklch(69.6% 0.17 162.48);
+    --cyan: oklch(71.5% 0.143 215.221);
+    --indigo: oklch(58.5% 0.233 277.117);
+    --violet: oklch(60.6% 0.25 292.717);
+    --purple: oklch(71.4% 0.203 305.504);
+    --fuchsia: oklch(66.7% 0.295 322.15);
+    --rose: oklch(64.5% 0.246 16.439);
 
     /* https://catppuccin.com/palette/#flavor-latte */
 
@@ -32,6 +32,7 @@
     --pink: #ea76cb;
     --mauve: #8839ef;
     --red: #d20f39;
+    --maroon: #e64553;
     --peach: #fe640e;
     --yellow: #df8e1d;
     --green: #40a02b;
@@ -54,6 +55,66 @@
     --crust: #dce0e8;
 
     --font-mono: 'JetBrains Mono', 'SF Mono', 'Roboto Mono', 'Cascadia Code', monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Keep around previously used tailwind-based colors for backwards compatibility sake */
+
+        /* https://tailwindcss.com/docs/customizing-colors */
+        --stone-050: oklch(21.6% 0.006 56.043);
+        --stone-100: oklch(21.6% 0.006 56.043);
+        --stone-200: oklch(26.8% 0.007 34.298);
+        --stone-300: oklch(26.8% 0.007 34.298);
+        --stone-400: oklch(44.4% 0.011 73.639);
+        --stone-500: oklch(55.3% 0.013 58.071);
+        --stone-600: oklch(70.9% 0.01 56.259);
+        --stone-700: oklch(86.9% 0.005 56.366);
+        --stone-800: oklch(92.3% 0.003 48.717);
+        --stone-900: oklch(97% 0.001 106.424);
+        --stone-950: oklch(98.5% 0.001 106.423);
+
+        /* shade 400 */
+        --orange: oklch(75% 0.183 55.934);
+        --amber: oklch(82.8% 0.189 84.429);
+        --lime: oklch(84.1% 0.238 128.85);
+        --emerald: oklch(76.5% 0.177 163.223);
+        --cyan: oklch(78.9% 0.154 211.53);
+        --indigo: oklch(67.3% 0.182 276.935);
+        --violet: oklch(70.2% 0.183 293.541);
+        --purple: oklch(71.4% 0.203 305.504);
+        --fuchsia: oklch(74% 0.238 322.16);
+        --rose: oklch(71.2% 0.194 13.428);
+
+        /* https://catppuccin.com/palette/#flavor-mocha */
+
+        --rosewater: #f5e0dc;
+        --flamingo: #f2cdcd;
+        --pink: #f5c2e7;
+        --mauve: #cba6f7;
+        --red: #f38ba8;
+        --maroon: #eba0ac;
+        --peach: #fab387;
+        --yellow: #f9e2af;
+        --green: #a6e3a1;
+        --teal: #94e2d5;
+        --sky: #89dceb;
+        --sapphire: #74c7ec;
+        --blue: #89b4fa;
+        --lavender: #b4befe;
+        --text: #cdd6f4;
+        --subtext-1: #bac2de;
+        --subtext-0: #a6adc8;
+        --overlay-2: #9399b2;
+        --overlay-1: #7f849c;
+        --overlay-0: #6c7086;
+        --surface-2: #585b70;
+        --surface-1: #45475a;
+        --surface-0: #313244;
+        --base: #1e1e2e;
+        --mantle: #181825;
+        --crust: #11111b;
+    }
 }
 
 textarea,
