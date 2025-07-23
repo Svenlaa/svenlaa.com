@@ -6,7 +6,12 @@
 <link rel="stylesheet" href="/style.css" />
 <style>
     body {
-        background-color: #fffbeb; /* amber-50 */
+        @media (prefers-color-scheme: light) {
+            background-color: oklch(98.7% 0.022 95.277); /* amber-50 */
+        }
+        @media (prefers-color-scheme: dark) {
+            color: oklch(98.7% 0.022 95.277);
+        }
     }
 </style>
 
