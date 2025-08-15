@@ -292,19 +292,16 @@
                 const [status, username, timestamp, gif] = post;
                 const isGifValid = /^(tode|berd|bot)$/.test(gif);
 
-                const ONE_HOUR = 3600000;
-                const TIMEZONE_OFFSET =
-                    (new Date().getTimezoneOffset() / 60) /* Convert the timezone offset to hours */ * ONE_HOUR;
-
-                /* new Date(timestamp) is based on device timezone. */
-                const isFromFuture = new Date(timestamp) - TIMEZONE_OFFSET > new Date();
+                /* new Date(timestamp) is based on device timezone, unless you explicitly add a timezone */
+                const date = new Date(timestamp + ' UTC');
+                const isFromFuture = date > new Date();
                 if (isFromFuture) {
                     continue;
                 }
                 entries.push({
                     status,
                     username,
-                    timestamp: new Date(timestamp),
+                    timestamp: date,
                     gif: isGifValid ? post[3] : undefined,
                     instance: instance.name,
                 });
