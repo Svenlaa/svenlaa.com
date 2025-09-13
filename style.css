@@ -125,7 +125,7 @@ input {
 }
 
 body {
-    font-family: Inter, sans-serif;
+    font-family: 'Noto Sans', Inter, sans-serif;
     max-width: 750px;
     margin: 0 auto;
     padding: 30px 10px;
