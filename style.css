@@ -122,6 +122,7 @@ input {
     font: inherit;
     letter-spacing: inherit;
     word-spacing: inherit;
+    font-size: max(1em, 16px);
 }
 
 body {
