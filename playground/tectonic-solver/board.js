@@ -158,3 +158,24 @@ export const updateCell = (cell_id, value, board) => {
     recalculateBoard(board);
     return;
 };
+
+export const getSurroundingCells = (cell, board) => {
+    const sizeX = board.size.x;
+    const sizeY = board.size.y;
+    const cellIndex = board.cells.findIndex(c => c.id === cell.id);
+    const x = cellIndex % sizeX;
+    const y = Math.floor(cellIndex / sizeX);
+    const surroundingCells = [];
+    for (let dy = -1; dy <= 1; dy++) {
+        for (let dx = -1; dx <= 1; dx++) {
+            if (dx === 0 && dy === 0) continue;
+            const newX = x + dx;
+            const newY = y + dy;
+            if (newX >= 0 && newX < sizeX && newY >= 0 && newY < sizeY) {
+                const neighborIndex = newY * sizeX + newX;
+                surroundingCells.push(board.cells[neighborIndex]);
+            } 
+        }
+    }
+    return surroundingCells;
+};

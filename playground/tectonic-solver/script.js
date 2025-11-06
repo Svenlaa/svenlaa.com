@@ -1,4 +1,4 @@
-import { inputBoard, drawBoard, recalculateBoard, updateCell } from './board.js';
+import { inputBoard, drawBoard, recalculateBoard, updateCell, getSurroundingCells } from './board.js';
 
 if (inputBoard.cells.length !== inputBoard.size.x * inputBoard.size.y) {
     throw new Error('Invalid board size');
@@ -10,9 +10,8 @@ let currentBoard = recalculateBoard(inputBoard);
 
 console.log(structuredClone(currentBoard));
 
-const blocksWithOneEmptyCell = currentBoard.blocks.filter((block) => block.emptyCellCount === 1);
-
-blocksWithOneEmptyCell.forEach((block) => {
+// fill in cells for blocks with only one empty cell
+currentBoard.blocks.filter((block) => block.emptyCellCount === 1).forEach((block) => {
     const emptyCell = block.cells.find((cell) => cell.value === null);
     const filledCells = block.cells.filter((cell) => cell.value !== null);
 
@@ -22,4 +21,41 @@ blocksWithOneEmptyCell.forEach((block) => {
         (num) => !filledValues.includes(num)
     );
     updateCell(emptyCell.id, missingValue, currentBoard);
+});
+
+// check surrounding cells to deduce possible values
+currentBoard.cells.filter(cell => cell.value === null).forEach(cell => {
+    const block = currentBoard.blocks.find(b => b.block === cell.block);
+    const filledValuesInBlock = block.cells.filter(c => c.value !== null).map(c => c.value);
+    const missingValuesInBlock = Array.from({ length: block.cellCount }, (_, i) => i + 1).filter(
+        (num) => !filledValuesInBlock.includes(num)
+    );
+    if (cell.id !== 25) return;
+
+    const surroundingCells = getSurroundingCells(cell, currentBoard);
+    const surroundingBlocksIds = new Set(surroundingCells.map(c => c.block));
+
+    const possibleValuesPerBlock = {};
+    surroundingBlocksIds.forEach(b => {
+        const blockCells = currentBoard.blocks.find(block => block.block === b).cells;
+        possibleValuesPerBlock[b] = Array.from({ length: blockCells.length }, (_, i) => i + 1);
+    });
+
+    const completeBlocks = [...surroundingBlocksIds].filter(b => {
+        const blockCells = currentBoard.blocks.find(block => block.block === b).cells;
+        return blockCells.every(c => surroundingCells.includes(c));
+    });
+
+    let surroundingValues = surroundingCells.map(c => c.value).filter(v => v !== null);
+
+    const blocksSurroundingValues = completeBlocks.flatMap(b => {
+        const blockCells = currentBoard.blocks.find(block => block.block === b).cells;
+        return Array.from({ length: blockCells.length }, (_, i) => i + 1);
+    });
+    surroundingValues = surroundingValues.concat(blocksSurroundingValues);
+
+    const possibleValues = missingValuesInBlock.filter(v => !surroundingValues.includes(v));
+
+    if (possibleValues.length === 1)
+        updateCell(cell.id, possibleValues[0], currentBoard);
 });
