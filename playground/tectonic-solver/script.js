@@ -71,6 +71,8 @@ const checkMissingCellsByBlock = () => {
         const missingValues = Array.from({ length: block.cellCount }, (_, i) => i + 1).filter(
             (num) => !filledValues.includes(num)
         );
+        if (missingValues.length === 0) return;
+
         const emptyCells = block.cells
             .filter((c) => c.value === null)
             .map((c) => {
