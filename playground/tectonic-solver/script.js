@@ -86,7 +86,7 @@ const checkMissingCellsByBlock = () => {
     });
 };
 
-[...Array(10)].forEach(() => {
+[...Array(20)].forEach(() => {
     fillCellByAdjecency();
     fillLastBlockCell();
     checkMissingCellsByBlock();

@@ -4,7 +4,7 @@
 }
 
 .cell {
-    --cell-size: min(4rem, calc((min(100vmin, 800px) - 1em) / 8));
+    --cell-size: min(4rem, calc((min(100vmin, 800px) - 1em) / 15));
     width: var(--cell-size);
     height: var(--cell-size);
     display: inline-block;
