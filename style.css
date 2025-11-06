@@ -122,10 +122,11 @@ input {
     font: inherit;
     letter-spacing: inherit;
     word-spacing: inherit;
+    font-size: max(1em, 16px);
 }
 
 body {
-    font-family: Inter, sans-serif;
+    font-family: 'Noto Sans', Inter, sans-serif;
     max-width: 750px;
     margin: 0 auto;
     padding: 30px 10px;

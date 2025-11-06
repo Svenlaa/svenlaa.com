@@ -70,8 +70,9 @@ const app = async () => {
                 <p>
                     <span>${video.talent.name}</span>
                     <span>${new Date(video.datetime + ' GMT+0900').toLocaleString('en-GB', {
-                        dateStyle: 'long',
-                        timeStyle: 'short',
+                        weekday: 'long',
+                        minute: '2-digit',
+                        hour: '2-digit',
                     })}</span>
                 </p>
             </a>

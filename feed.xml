@@ -4,6 +4,12 @@
         <link>https://svenlaa.com</link>
         <description>The site of Sven Lammertink</description>
         <item>
+            <title>Bonus Post</title>
+            <link>https://svenlaa.com/bloggo/bonus-post/</link>
+            <guid>https://svenlaa.com/bloggo/bonus-post/</guid>
+            <pubDate>Sat, 16 Aug 2025 18:04:40 GMT</pubDate>
+        </item>
+        <item>
             <title>Time Notation</title>
             <link>https://svenlaa.com/bloggo/time-notation/</link>
             <guid>https://svenlaa.com/bloggo/time-notation/</guid>
