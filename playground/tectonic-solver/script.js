@@ -30,7 +30,6 @@ currentBoard.cells.filter(cell => cell.value === null).forEach(cell => {
     const missingValuesInBlock = Array.from({ length: block.cellCount }, (_, i) => i + 1).filter(
         (num) => !filledValuesInBlock.includes(num)
     );
-    if (cell.id !== 25) return;
 
     const surroundingCells = getSurroundingCells(cell, currentBoard);
     const surroundingBlocksIds = new Set(surroundingCells.map(c => c.block));
