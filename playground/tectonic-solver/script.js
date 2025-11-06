@@ -61,7 +61,33 @@ const fillCellByAdjecency = () => {
     }
 )};
 
+const checkMissingCellsByBlock = () => {
+    currentBoard.blocks.forEach(block => {
+        const filledValues = block.cells.filter(c => c.value !== null).map(c => c.value);
+        const missingValues = Array.from({ length: block.cellCount }, (_, i) => i + 1).filter(
+            (num) => !filledValues.includes(num)
+        );
+        const emptyCells = block.cells.filter(c => c.value === null).map(c => {
+            const surroundingCells = getSurroundingCells(c, currentBoard);
+            const surroundingValues = surroundingCells.map(sc => sc.value).filter(v => v !== null);
+            const possibleValues = missingValues.filter(v => !surroundingValues.includes(v));
+            return {
+                cell: c,
+                possibleValues: possibleValues
+            };
+        });
+
+        missingValues.forEach(mv => {
+            const fittingCells = emptyCells.filter(ec => ec.possibleValues.includes(mv));
+            if (fittingCells.length === 1) {
+                updateCell(fittingCells[0].cell.id, mv, currentBoard);
+            }
+        });
+    });
+};
+
 [...Array(10)].forEach(() => {
     fillCellByAdjecency();
     fillLastBlockCell();
+    checkMissingCellsByBlock();
 });
