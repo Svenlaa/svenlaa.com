@@ -112,6 +112,8 @@ export const drawBoard = (cells, size) => {
             const value = cell.value ?? cell.initialValue ?? '';
             cellDiv.className = `cell ${cell.initialValue ? 'initial-value' : ''}`;
             cellDiv.style.backgroundColor = colors[cell.block];
+            cellDiv.dataset.cellId = cellIndex;
+            cellDiv.dataset.blockId = cell.block;
 
             cellDiv.textContent = value;
             row.appendChild(cellDiv);
