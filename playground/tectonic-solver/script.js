@@ -41,14 +41,16 @@ const fillCellByAdjecency = () => {
 
         const completeBlocks = [...surroundingBlocksIds].filter(b => {
             const blockCells = currentBoard.blocks.find(block => block.block === b).cells;
-            return blockCells.every(c => surroundingCells.includes(c));
+            return blockCells.filter(c => c.value === null).every(c => surroundingCells.includes(c));
         });
 
         let surroundingValues = surroundingCells.map(c => c.value).filter(v => v !== null);
 
         const blocksSurroundingValues = completeBlocks.flatMap(b => {
             const blockCells = currentBoard.blocks.find(block => block.block === b).cells;
-            return Array.from({ length: blockCells.length }, (_, i) => i + 1);
+            const allPossibleValuesInBlock =  Array.from({ length: blockCells.length }, (_, i) => i + 1);
+            const valuesInBlock = blockCells.map(c => c.value).filter(v => v !== null);
+            return allPossibleValuesInBlock.filter(v => !valuesInBlock.includes(v));
         });
         surroundingValues = surroundingValues.concat(blocksSurroundingValues);
 
