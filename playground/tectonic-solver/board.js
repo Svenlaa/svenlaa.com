@@ -190,55 +190,6 @@ export const drawBoard = (cells, size) => {
     const board = document.getElementById('board');
     board.innerHTML = '';
 
-    const colors = [
-        'hsl(223, 73%, 78%)',
-        'hsl(253, 63%, 76%)',
-        'hsl(187, 76%, 79%)',
-        'hsl(173, 71%, 70%)',
-        'hsl(3, 79%, 70%)',
-        'hsl(59, 79%, 86%)',
-        'hsl(313, 60%, 89%)',
-        'hsl(129, 76%, 78%)',
-        'hsl(290, 69%, 81%)',
-        'hsl(225, 69%, 72%)',
-        'hsl(274, 69%, 75%)',
-        'hsl(253, 67%, 85%)',
-        'hsl(40, 78%, 81%)',
-        'hsl(27, 70%, 74%)',
-        'hsl(342, 74%, 77%)',
-        'hsl(223, 73%, 78%)',
-        'hsl(253, 63%, 76%)',
-        'hsl(187, 76%, 79%)',
-        'hsl(173, 71%, 70%)',
-        'hsl(3, 79%, 70%)',
-        'hsl(59, 79%, 86%)',
-        'hsl(313, 60%, 89%)',
-        'hsl(129, 76%, 78%)',
-        'hsl(290, 69%, 81%)',
-        'hsl(225, 69%, 72%)',
-        'hsl(274, 69%, 75%)',
-        'hsl(253, 67%, 85%)',
-        'hsl(40, 78%, 81%)',
-        'hsl(27, 70%, 74%)',
-        'hsl(342, 74%, 77%)',
-        'hsl(223, 73%, 78%)',
-        'hsl(265, 70%, 78%)',
-        'hsl(253, 63%, 76%)',
-        'hsl(187, 76%, 79%)',
-        'hsl(173, 71%, 70%)',
-        'hsl(3, 79%, 70%)',
-        'hsl(59, 79%, 86%)',
-        'hsl(313, 60%, 89%)',
-        'hsl(129, 76%, 78%)',
-        'hsl(290, 69%, 81%)',
-        'hsl(225, 69%, 72%)',
-        'hsl(274, 69%, 75%)',
-        'hsl(253, 67%, 85%)',
-        'hsl(40, 78%, 81%)',
-        'hsl(27, 70%, 74%)',
-        'hsl(342, 74%, 77%)',
-    ];
-
     for (let y = 0; y < size.y; y++) {
         const row = document.createElement('div');
         row.className = 'row';
@@ -249,9 +200,22 @@ export const drawBoard = (cells, size) => {
             const cellDiv = document.createElement('div');
             const value = cell.value ?? cell.initialValue ?? '';
             cellDiv.className = `cell ${cell.initialValue ? 'initial-value' : ''}`;
-            cellDiv.style.backgroundColor = colors[cell.block];
             cellDiv.dataset.cellId = cellIndex;
             cellDiv.dataset.blockId = cell.block;
+
+            const borderStyle = '1px solid var(--stone-950)';
+
+            const aboveCell = y > 0 ? cells[(y - 1) * size.x + x] : null;
+            if (!aboveCell || aboveCell.block !== cell.block) cellDiv.style.borderTop = borderStyle;
+
+            const leftCell = x > 0 ? cells[y * size.x + (x - 1)] : null;
+            if (!leftCell || leftCell.block !== cell.block) cellDiv.style.borderLeft = borderStyle;
+
+            const rightCell = x < size.x - 1 ? cells[y * size.x + (x + 1)] : null;
+            if (!rightCell || rightCell.block !== cell.block) cellDiv.style.borderRight = borderStyle;
+
+            const belowCell = y < size.y - 1 ? cells[(y + 1) * size.x + x] : null;
+            if (!belowCell || belowCell.block !== cell.block) cellDiv.style.borderBottom = borderStyle;
 
             cellDiv.textContent = value;
             row.appendChild(cellDiv);

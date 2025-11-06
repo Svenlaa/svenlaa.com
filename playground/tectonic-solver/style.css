@@ -4,18 +4,19 @@
 }
 
 .cell {
-    --cell-size: min(4rem, calc((min(100vmin, 800px) - 1em) / 15));
+    --cell-size: min(4rem, calc((min(100vmin, 800px) - 1em) / 16));
     width: var(--cell-size);
     height: var(--cell-size);
     display: inline-block;
-    border: 1px solid var(--stone-950);
+    border: 1px solid lightgray;
     text-align: center;
     line-height: var(--cell-size);
     font-size: calc(var(--cell-size) * 0.8);
-    background-color: var(--stone-050);
+    background-color: var(--base);
 
     &.initial-value {
         font-family: var(--font-mono);
         font-weight: bold;
+        color: var(--green);
     }
 }
