@@ -8,7 +8,7 @@
     width: var(--cell-size);
     height: var(--cell-size);
     display: inline-block;
-    border: 1px solid lightgray;
+    border: 1px solid var(--surface-1);
     text-align: center;
     line-height: var(--cell-size);
     font-size: calc(var(--cell-size) * 0.8);
