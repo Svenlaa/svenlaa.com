@@ -65,7 +65,7 @@ const app = async () => {
         videoElement.innerHTML = `
             <a href="${video.url}" class="basic" target="_blank">
                 <img src="${video.thumbnail}" alt="${video.title}">
-                ${video.isLive ? '<span class="live">LIVE</span>' : ''} 
+                ${video.isLive ? '<span class="live">ライブ</span>' : ''} 
                 <h3>${video.title}</h3>
                 <p>
                     <span>${video.talent.name}</span>
