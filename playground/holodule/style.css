@@ -14,20 +14,15 @@ body {
     overflow: hidden;
     transition: transform 0.2s;
     position: relative;
-}
-.video:hover {
-    transform: scale(1.02);
-    background-color: var(--surface-1);
-    color: inherit;
-}
-.video a {
+    display: flex;
+    flex-direction: column;
     text-decoration: none;
     border: 0;
     color: inherit;
 }
-.video a:hover {
-    outline: 0;
-    background-color: inherit;
+.video:hover {
+    transform: scale(1.02);
+    background-color: var(--surface-1);
 }
 .video .live {
     position: absolute;
@@ -37,6 +32,12 @@ body {
     color: var(--base);
     padding: 0.25em 0.5em;
     border-radius: 0.25em;
+}
+.video .details {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 }
 .video img {
     width: 100%;

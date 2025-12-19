@@ -60,12 +60,13 @@ const app = async () => {
     // render the feed as HTML
     feedContainer.innerHTML = '';
     videoList.forEach((video) => {
-        const videoElement = document.createElement('div');
-        videoElement.className = 'video';
+        const videoElement = document.createElement('a');
+        videoElement.className = 'video basic';
+        videoElement.href = video.url;
         videoElement.innerHTML = `
-            <a href="${video.url}" class="basic" target="_blank">
-                <img src="${video.thumbnail}" alt="${video.title}">
-                ${video.isLive ? '<span class="live">ライブ</span>' : ''} 
+            <img src="${video.thumbnail}" alt="${video.title}">
+            ${video.isLive ? '<span class="live">ライブ</span>' : ''} 
+            <div class="details">
                 <h3>${video.title}</h3>
                 <p>
                     <span>${video.talent.name}</span>
@@ -75,7 +76,7 @@ const app = async () => {
                         hour: '2-digit',
                     })}</span>
                 </p>
-            </a>
+            </div>
         `;
         feedContainer.appendChild(videoElement);
     });
