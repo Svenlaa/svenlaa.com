@@ -4,25 +4,25 @@ const app = async () => {
         console.error('Feed container not found');
         return;
     }
-    feedContainer.innerHTML = 'loading...';
+    feedContainer.innerHTML = '読み込み中...';
 
     const res = await fetch('https://schedule.hololive.tv/api/list/7');
     if (!res.ok) {
         console.error('Failed to fetch data from Hololive API');
-        feedContainer.innerHTML = '<p style="color: var(--red)">Failed to fetch data</p>';
+        feedContainer.innerHTML = `<p style="color: var(--red)">データ取得失敗</p>`
         return;
     }
     const data = await res.json();
     if (!data || typeof data !== 'object') {
         console.error('Expected JSON data but got something else');
-        feedContainer.innerHTML = '<p style="color: var(--red)">No data found</p>';
+        feedContainer.innerHTML = '<p style="color: var(--red)">データなし</p>';
         return;
     }
     const now = new Date();
 
     if (!data || !data.dateGroupList) {
         console.error('No data found');
-        feedContainer.innerHTML = '<p style="color: var(--red)">No data found</p>';
+        feedContainer.innerHTML = '<p style="color: var(--red)">データなし</p>';
         return;
     }
 
@@ -53,7 +53,7 @@ const app = async () => {
         }));
     if (videoList.length === 0) {
         console.error('No videos found');
-        feedContainer.innerHTML = '<p style="color: var(--red)">No livestreams found</p>';
+        feedContainer.innerHTML = '<p style="color: var(--red)">配信予定なし</p>';
         return;
     }
 
@@ -69,7 +69,7 @@ const app = async () => {
                 <h3>${video.title}</h3>
                 <p>
                     <span>${video.talent.name}</span>
-                    <span>${new Date(video.datetime + ' GMT+0900').toLocaleString('en-GB', {
+                    <span>${new Date(video.datetime + ' GMT+0900').toLocaleString('ja-JP', {
                         weekday: 'long',
                         minute: '2-digit',
                         hour: '2-digit',
