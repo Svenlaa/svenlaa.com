@@ -7,7 +7,7 @@
 
 <h1>
     <a style="--color: var(--text); text-decoration: none" href="https://github.com/Svenlaa/svenlaa.com"
-        ><b style="font-weight: inherit">Svenlaa</b><span style="font-size: 0.95em; font-weight: 600">.com</span></a
+        ><b style="font-weight: inherit">Svenlaa</b><span id="tld" style="font-size: 0.95em; font-weight: 600"></span></a
     >
 </h1>
 <p>
@@ -31,3 +31,16 @@
 </ul>
 
 <script src="/scripts/roller.js"></script>
+<script>
+    const tld = document.getElementById("tld");
+    const { origin } = window.location;
+    const marker = "://svenlaa.";
+
+    if (tld && origin.includes(marker)) {
+        const suffix = origin.slice(origin.indexOf(marker) + marker.length).split(":")[0];
+
+        if (suffix) {
+            tld.textContent = `.${suffix}`;
+        }
+    }
+</script>
